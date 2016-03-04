@@ -1,10 +1,15 @@
 html {
     background-color: #202020;
+}
+
+html, body, header {
+    overflow: auto;
+    display: block;
     margin: 0;
     padding: 0;
 }
 
-body {
+p {
     margin: 0;
     padding: 0;
 }
@@ -12,11 +17,16 @@ body {
 #header {
     background-color: #093254;
     color: #2E5A7E;
-    top: 0;
-    position: fixed;
     width: 100%;
+    height: 100%;
     text-align: center;
     font-size: 64px;
+}
+
+#contents {
+    padding: 10%;
+    height: 350px;
+    bottom: 0;
 }
 
 #map_container {
