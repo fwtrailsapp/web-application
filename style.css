@@ -1,0 +1,34 @@
+html {
+    background-color: #202020;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #093254;
+    color: #2E5A7E;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-size: 64px;
+}
+
+#map_container {
+    float: left;
+    height: 300px;
+    width: 35%;
+    background-color: #AD9867;
+}
+
+#stats_container {
+    float: right;
+    height: 300px;
+    width: 35%;
+    background-color: #AD9867;
+}
