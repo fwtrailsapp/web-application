@@ -36,6 +36,11 @@ p {
     background-color: #AD9867;
 }
 
+#map {
+    height: 100%;
+    width: 100%;
+}
+
 #stats_container {
     float: right;
     height: 300px;
