@@ -24,7 +24,7 @@ p {
 }
 
 #contents {
-    padding: 10%;
+    padding: 5%;
     height: 350px;
     bottom: 0;
 }
@@ -32,7 +32,7 @@ p {
 #map_container {
     float: left;
     height: 400px;
-    width: 60%;
+    width: 70%;
     background-color: #AD9867;
 }
 
@@ -43,7 +43,7 @@ p {
 
 #stats_container {
     float: right;
-    height: 300px;
-    width: 35%;
+    height: 400px;
+    width: 25%;
     background-color: #AD9867;
 }
