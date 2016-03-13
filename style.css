@@ -1,7 +1,3 @@
-html {
-    background-color: #202020;
-}
-
 html, body, header {
     overflow: auto;
     display: block;
