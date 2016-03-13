@@ -16,6 +16,12 @@ body, html, .panel-body-custom, .map-container, .stats-container, #contents {
     background-color: #093254;
 }
 
+.panel-heading-custom {
+    background-image: none;
+    background-color: #093254;
+    color: #337ab7;
+}
+
 #contents {
     padding: 5%;
     bottom: 0;
