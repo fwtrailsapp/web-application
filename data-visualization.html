@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fort Wayne Regional Trail Network Data</title>
+    <title>Data</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -11,29 +14,53 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
 
-<div id="header">
-    <p id="title">Fort Wayne Regional Trail Network Data</p>
-</div>
+<nav class="navbar navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="data-visualization.html">Fort Wayne Regional Trail Network Data</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="data-visualization.html">Home</a>
+            </li>
+            <li class="active">
+                <a href="about.html">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <div id="contents">
     
-    <div id="map_container">
-        <div id="map"></div>
-    </div>
-    <div id="stats_container">
-			<br>
-			Activites Recorded: 11<br><br>
-			Total Hours: 15.81<br>
-			Total Miles: 74.39<br><br>
-			
-			Average Duration: 1.44 hours<br>
-			Average Distance: 6.67 miles<br>
-			Average Speed: 4.71 mph<br>
+    <div class="panel panel-default map-container">
+        <div class="panel-heading">
+            <div class="panel-title">Usage Heatmap</div>
+        </div>
+        <div class="panel-body panel-body-custom">
+            <div id="map" style="height:100%; width:100%;"></div>
+        </div>
     </div>
 
+    <div class="panel panel-default stats-container">
+        <div class="panel-heading">
+            <div class="panel-title">Usage Heatmap</div>
+        </div>
+        <div class="panel-body panel-body-custom">
+            <br>
+            Activites Recorded: 11<br><br>
+            Total Hours: 15.81<br>
+            Total Miles: 74.39<br><br>
+            
+            Average Duration: 1.44 hours<br>
+            Average Distance: 6.67 miles<br>
+            Average Speed: 4.71 mph<br>
+        </div>
+    </div>
 </div>
 
 <script>

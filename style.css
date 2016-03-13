@@ -1,6 +1,4 @@
-html, body, header {
-    overflow: auto;
-    display: block;
+html, body {
     margin: 0;
     padding: 0;
 }
@@ -10,37 +8,28 @@ p {
     padding: 0;
 }
 
-#header {
-    background-color: #093254;
-    color: #2E5A7E;
-    width: 100%;
+body, html, .panel-body-custom, .map-container, .stats-container, #contents {
     height: 100%;
-    text-align: center;
-    font-size: 64px;
+}
+
+.navbar-custom {
+    background-color: #093254;
 }
 
 #contents {
     padding: 5%;
-    height: 350px;
     bottom: 0;
 }
 
-#map_container {
+.map-container {
     float: left;
-    height: 400px;
     width: 70%;
     background-color: #AD9867;
+    padding: 0;
 }
 
-#map {
-    height: 100%;
-    width: 100%;
-}
-
-#stats_container {
+.stats-container {
     float: right;
-    height: 400px;
     width: 25%;
     background-color: #AD9867;
-    padding: 3%;
 }
