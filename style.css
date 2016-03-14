@@ -39,3 +39,11 @@ body, html, .panel-body-custom, .map-container, .stats-container, #contents {
     width: 25%;
     background-color: #AD9867;
 }
+
+footer {
+     text-align: center;
+}
+
+.footer-custom {
+    display: inline;
+}
