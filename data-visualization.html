@@ -22,7 +22,9 @@
 <nav class="navbar navbar-fixed-top navbar-custom">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="data-visualization.html">Fort Wayne Regional Trail Network Data</a>
+            <a class="navbar-brand" href="data-visualization.html">
+                <img alt="Brand" src="resources/brand.png">
+            </a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active">
@@ -80,6 +82,11 @@
 
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: getPoints(),
+            map: map
+        });
+
+        var ctaLayer = new google.maps.KmlLayer({
+            url: 'https://gist.githubusercontent.com/scottyseus/ec2e4892d5f53920390e/raw/47128a99e128ba78ea8b5d7b476544766b0e5f5c/overlay.kml',
             map: map
         });
     }
