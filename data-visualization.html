@@ -55,32 +55,39 @@
                     <tr>
                         <th>Statistic</th>
                         <th>Value</th>
+                        <th>Units</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Activites Recorded</td>
                         <td>11</td>
+                        <td>-</td>
                     </tr>
                     <tr>
-                        <td>Total Hours</td>
+                        <td>Total Duration</td>
                         <td>15.81</td>
+                        <td>hours</td>
                     </tr>
                     <tr>
-                        <td>Total Miles</td>
+                        <td>Total Distance</td>
                         <td>74.39</td>
+                        <td>miles</td>
                     </tr>
                     <tr>
                         <td>Average Duration</td>
                         <td>1.44</td>
+                        <td>hours</td>
                     </tr>
                     <tr>
                         <td>Average Distance</td>
                         <td>6.67</td>
+                        <td>miles</td>
                     </tr>
                     <tr>
                         <td>Average Speed</td>
                         <td>4.71</td>
+                        <td>mph</td>
                     </tr>
                 </tbody>
             </table>
@@ -103,17 +110,20 @@
     var map, heatmap;
 
     function initMap() {
+        // create the map object
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13,
             center: {lat: 41.1188, lng: -85.1090},
             mapTypeId: google.maps.MapTypeId.SATELLITE
         });
 
+        // heatmap layer
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: getPoints(),
             map: map
         });
 
+        // overlay of the Fort Wayne Regional Trail Network
         var ctaLayer = new google.maps.KmlLayer({
             url: 'https://gist.githubusercontent.com/scottyseus/ec2e4892d5f53920390e/raw/47128a99e128ba78ea8b5d7b476544766b0e5f5c/overlay.kml',
             map: map
@@ -2989,6 +2999,8 @@
         ];
     }
 </script>
+
+<!-- Include the Google Maps library -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA2nlNoi_tXPHrq6ER0UbsOYXDDPSeghQ&libraries=visualization&callback=initMap">
 </script>
