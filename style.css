@@ -23,7 +23,7 @@ body, html, .panel-body-custom, .map-container, .stats-container, #contents {
 }
 
 #contents {
-    padding: 5%;
+    padding: 100px;
     bottom: 0;
 }
 
