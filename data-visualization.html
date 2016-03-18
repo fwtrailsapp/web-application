@@ -17,7 +17,7 @@
 
 
 </head>
-<body onload="getActivities();">
+<body onload="getStatistics();">
 
     <nav class="navbar navbar-fixed-top navbar-custom">
         <div class="container-fluid">
@@ -49,7 +49,8 @@
             <div class="panel-heading panel-heading-custom">
                 <div class="panel-title">Statistics</div>
             </div>
-            <div class="panel-body panel-body-custom">
+            <div id="tableContainer" class="panel-body panel-body-custom">
+            <!-- 
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -90,7 +91,7 @@
                             <td>mph</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
             </div>
         </div>
     </div>
@@ -109,7 +110,8 @@
 
     var map, heatmap;
     var activityUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/AllStat';
-    var pathUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/OverAllPath'
+    var pathUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/OverAllPath';
+    var rowHeaders = {'total_calories': 'Total Calories', 'total_distance': 'Total Distance', 'total_duration': 'Total Duration'};
 
     function initMap() {
         // create the map object
@@ -129,33 +131,72 @@
         getPaths();
     }
 
-    function getActivities() {
+    function getStatistics() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            console.log(xmlhttp.responseText);
-            displayActivities(JSON.parse(xmlhttp.responseText))
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                displayStatistics(JSON.parse(xmlhttp.responseText));
+            }
         }
         xmlhttp.open("GET", activityUrl, true);
         xmlhttp.send();
     }
 
-    function displayActivities(activities) {
-        
+    function displayStatistics(statistics) {
+        for (index in statistics['GetAllStatsResult']) {
+            statsSection = statistics['GetAllStatsResult'][index];
+            createTable(statsSection);
+        }
+    }
+
+    function createTable(statsSection) {
+        var tableDiv = document.getElementById("tableContainer");
+        var table = initTableElement();
+        tableDiv.appendChild(table);
+        //var header = table.createTHead();
+        //var headerRow = header.insertRow(0);
+        //addToRow(headerRow, ["Statistic", "Value"]);
+        for (var i = 0; i < Object.keys(statsSection).length; i++) {
+            var key = Object.keys(statsSection)[i];
+            var row = table.insertRow(i);
+            addToRow(row, [key, statsSection[key]]);
+        }
+
+    }
+
+    function initTableElement() {
+        var table = document.createElement("table");
+        table.classList.add("table");
+        table.classList.add("table-hover");
+        return table;
+    }
+
+    function addToRow(rowElement, items) {
+        for (var i = 0; i < items.length; i++) {
+            var cell = rowElement.insertCell(i);
+            if (items[i] in rowHeaders) {
+                cell.innerHTML = rowHeaders[items[i]];
+            } else {
+                cell.innerHTML = items[i];
+            }
+        }
     }
 
     function getPaths() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            displayPaths(JSON.parse(xmlhttp.responseText));
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                displayPaths(JSON.parse(xmlhttp.responseText));
+            }
         }
         xmlhttp.open("GET", pathUrl, true);
         xmlhttp.send();
     }
 
     function displayPaths(paths) {
-        var points = []
+        var points = [];
         for(index in paths['GetPathResult']) {
-            points = points.concat(parsePath(paths['GetPathResult'][index]['path']))
+            points = points.concat(parsePath(paths['GetPathResult'][index]['path']));
         }
 
         // heatmap layer
@@ -166,12 +207,12 @@
     }
 
     function parsePath(path) {
-        var points = []
+        var points = [];
         var coords = path.split(/[ ,]+/);
         for (i = 0; i < coords.length; i++) {
-            points.push(new google.maps.LatLng(coords[i], coords[++i]))
+            points.push(new google.maps.LatLng(coords[i], coords[++i]));
         }
-        return points
+        return points;
     }
     </script>
 
