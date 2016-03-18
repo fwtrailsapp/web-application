@@ -22,13 +22,13 @@
     <nav class="navbar navbar-fixed-top navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="data-visualization.html">
+                <a class="navbar-brand" href="HtmlPage1.html">
                     <img alt="Brand" src="resources/brand.png">
                 </a>
             </div>
-            <ul class="nav navbar-nav">
+            <ul class="navbar-custom nav navbar-nav">
                 <li class="active">
-                    <a href="data-visualization.html">Home</a>
+                    <a href="HtmlPage1.html">Home</a>
                 </li>
             </ul>
         </div>
@@ -113,6 +113,7 @@
     var pathUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/OverAllPath';
     var rowHeaders = {'total_calories': 'Total Calories', 'total_distance': 'Total Distance', 'total_duration': 'Total Duration'};
 
+    // this method is called automatically when the Google Maps library script is loaded (see bottom of page)
     function initMap() {
         // create the map object
         map = new google.maps.Map(document.getElementById('map'), {
@@ -131,6 +132,7 @@
         getPaths();
     }
 
+    // this method is called on page load to bring in the statistics data from the server and tabulate it.
     function getStatistics() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -142,6 +144,7 @@
         xmlhttp.send();
     }
 
+    // displays the statistics JSON from the server
     function displayStatistics(statistics) {
         for (index in statistics['GetAllStatsResult']) {
             statsSection = statistics['GetAllStatsResult'][index];
@@ -149,6 +152,7 @@
         }
     }
 
+    // displays a single section of the statistics in a table (e.g. biking)
     function createTable(statsSection) {
         var tableDiv = document.getElementById("tableContainer");
         var table = initTableElement();
@@ -170,6 +174,7 @@
 
     }
 
+    // creates a table object with the appropriate styling applied
     function initTableElement() {
         var table = document.createElement("table");
         table.classList.add("table");
@@ -177,6 +182,7 @@
         return table;
     }
 
+    // adds the items to the row element
     function addToRow(rowElement, items) {
         for (var i = 0; i < items.length; i++) {
             var cell = rowElement.insertCell(i);
@@ -188,6 +194,7 @@
         }
     }
 
+    // get the activity paths from the database
     function getPaths() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -199,6 +206,7 @@
         xmlhttp.send();
     }
 
+    // displays the heatmap with points from all of the paths from the database
     function displayPaths(paths) {
         var points = [];
         for(index in paths['GetPathResult']) {
@@ -210,6 +218,27 @@
             data: points,
             map: map
         });
+
+        var gradient = [
+            'rgba(0, 255, 255, 0)',
+            'rgba(0, 255, 255, 1)',
+            'rgba(0, 191, 255, 1)',
+            'rgba(0, 127, 255, 1)',
+            'rgba(0, 63, 255, 1)',
+            'rgba(0, 0, 255, 1)',
+            'rgba(0, 0, 223, 1)',
+            'rgba(0, 0, 191, 1)',
+            'rgba(0, 0, 159, 1)',
+            'rgba(0, 0, 127, 1)',
+            'rgba(63, 0, 91, 1)',
+            'rgba(127, 0, 63, 1)',
+            'rgba(191, 0, 31, 1)',
+            'rgba(255, 0, 0, 1)'
+        ]
+
+        heatmap.set('gradient', gradient);
+        heatmap.set('opacity', 1);
+        heatmap.set('radius', 50);
     }
 
     function parsePath(path) {
