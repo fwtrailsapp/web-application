@@ -156,10 +156,16 @@
         //var header = table.createTHead();
         //var headerRow = header.insertRow(0);
         //addToRow(headerRow, ["Statistic", "Value"]);
+        var headerRow = table.insertRow(0);
+        var rowNum = 1;
+        addToRow(headerRow, ['<b>' + statsSection['type'] + '</b>', ''])
         for (var i = 0; i < Object.keys(statsSection).length; i++) {
             var key = Object.keys(statsSection)[i];
-            var row = table.insertRow(i);
-            addToRow(row, [key, statsSection[key]]);
+            if (key != 'type') {
+                var row = table.insertRow(rowNum);
+                rowNum++;
+                addToRow(row, [key, statsSection[key]]);
+            }   
         }
 
     }
