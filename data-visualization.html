@@ -50,57 +50,9 @@
                 <div class="panel-title">Statistics</div>
             </div>
             <div id="tableContainer" class="panel-body panel-body-custom">
-            <!-- 
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Statistic</th>
-                            <th>Value</th>
-                            <th>Units</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Activites Recorded</td>
-                            <td>11</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Total Duration</td>
-                            <td>15.81</td>
-                            <td>hours</td>
-                        </tr>
-                        <tr>
-                            <td>Total Distance</td>
-                            <td>74.39</td>
-                            <td>miles</td>
-                        </tr>
-                        <tr>
-                            <td>Average Duration</td>
-                            <td>1.44</td>
-                            <td>hours</td>
-                        </tr>
-                        <tr>
-                            <td>Average Distance</td>
-                            <td>6.67</td>
-                            <td>miles</td>
-                        </tr>
-                        <tr>
-                            <td>Average Speed</td>
-                            <td>4.71</td>
-                            <td>mph</td>
-                        </tr>
-                    </tbody>
-                </table> -->
             </div>
         </div>
     </div>
-
-    <footer>
-        <ul class="footer-custom">
-            <li>&copy; 2016 <a href="http://www.fortwayneparks.org/index.php?option=com_content&view=article&id=151&Itemid=34">City of Fort Wayne Greenways and Trails Department<a></li>
-        </ul>
-    </footer>
 
     <script>
 
@@ -157,9 +109,6 @@
         var tableDiv = document.getElementById("tableContainer");
         var table = initTableElement();
         tableDiv.appendChild(table);
-        //var header = table.createTHead();
-        //var headerRow = header.insertRow(0);
-        //addToRow(headerRow, ["Statistic", "Value"]);
         var headerRow = table.insertRow(0);
         var rowNum = 1;
         addToRow(headerRow, ['<b>' + statsSection['type'] + '</b>', ''])
@@ -238,7 +187,7 @@
 
         heatmap.set('gradient', gradient);
         heatmap.set('opacity', 1);
-        heatmap.set('radius', 50);
+        heatmap.set('radius', 20);
     }
 
     function parsePath(path) {
