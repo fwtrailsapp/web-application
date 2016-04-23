@@ -187,17 +187,26 @@
 
         heatmap.set('gradient', gradient);
         heatmap.set('opacity', 1);
-        heatmap.set('radius', 20);
+        heatmap.set('radius', 50);
     }
 
     function parsePath(path) {
         var points = [];
         var coords = path.split(/[ ,]+/);
         for (i = 0; i < coords.length; i++) {
-            points.push(new google.maps.LatLng(coords[i], coords[++i]));
+            var lat = coords[i]
+            var long = coords[++i]
+            if (!lat.isEmpty() && !long.isEmpty()) {
+                points.push(new google.maps.LatLng(lat, long));
+            }
         }
         return points;
     }
+
+    String.prototype.isEmpty = function() {
+        return (this.length === 0 || !this.trim());
+    };
+    
     </script>
 
     <!-- Include the Google Maps library -->
