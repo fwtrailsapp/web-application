@@ -109,8 +109,8 @@
     // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
     var map, heatmap;
-    var activityUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/AllStat';
-    var pathUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/OverAllPath';
+    var activityUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/trails/api/1/Statistics/All';
+    var pathUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/trails/api/1/Path/All';
     var rowHeaders = {'total_calories': 'Total Calories', 'total_distance': 'Total Distance', 'total_duration': 'Total Duration'};
 
     // this method is called automatically when the Google Maps library script is loaded (see bottom of page)
@@ -146,8 +146,8 @@
 
     // displays the statistics JSON from the server
     function displayStatistics(statistics) {
-        for (index in statistics['GetAllStatsResult']) {
-            statsSection = statistics['GetAllStatsResult'][index];
+        for (index in statistics) {
+            statsSection = statistics[index];
             createTable(statsSection);
         }
     }
@@ -209,8 +209,8 @@
     // displays the heatmap with points from all of the paths from the database
     function displayPaths(paths) {
         var points = [];
-        for(index in paths['GetPathResult']) {
-            points = points.concat(parsePath(paths['GetPathResult'][index]['path']));
+        for(index in paths) {
+            points = points.concat(parsePath(paths[index]['path']));
         }
 
         // heatmap layer
