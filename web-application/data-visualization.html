@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Data</title>
+    <link rel="stylesheet" type="text/css" href="/WebApp/Content/style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+</head>
+<body onload="getStatistics();">
+
+    <nav class="navbar navbar-fixed-top navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="HtmlPage1.html">
+                    <img alt="Brand" src="resources/brand.png">
+                </a>
+            </div>
+            <ul class="navbar-custom nav navbar-nav">
+                <li class="active">
+                    <a href="HtmlPage1.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="contents">
+
+        <div class="panel map-container">
+            <div class="panel-heading panel-heading-custom">
+                <div class="panel-title">Usage Heatmap</div>
+            </div>
+            <div class="panel-body panel-body-custom">
+                <div id="map" style="height:100%; width:100%;"></div>
+            </div>
+        </div>
+
+        <div class="panel stats-container">
+            <div class="panel-heading panel-heading-custom">
+                <div class="panel-title">Statistics</div>
+            </div>
+            <div id="tableContainer" class="panel-body panel-body-custom">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // This example requires the Visualization library. Include the libraries=visualization
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+
+        var map, heatmap;
+        var activityUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/trails/api/1/Statistics/All';
+        var pathUrl = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/trails/api/1/Path/All';
+        var rowHeaders = { 'total_calories': 'Total Calories', 'total_distance': 'Total Distance', 'total_duration': 'Total Duration' };
+
+        // this method is called automatically when the Google Maps library script is loaded (see bottom of page)
+        function initMap() {
+            // create the map object
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: { lat: 41.1188, lng: -85.1090 },
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            });
+
+            // overlay of the Fort Wayne Regional Trail Network
+            var ctaLayer = new google.maps.KmlLayer({
+                url: 'https://gist.githubusercontent.com/scottyseus/ec2e4892d5f53920390e/raw/47128a99e128ba78ea8b5d7b476544766b0e5f5c/overlay.kml',
+                map: map
+            });
+
+            // add the paths
+            getPaths();
+        }
+
+        // this method is called on page load to bring in the statistics data from the server and tabulate it.
+        function getStatistics() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayStatistics(JSON.parse(xmlhttp.responseText));
+                }
+            }
+            xmlhttp.open("GET", activityUrl, true);
+            xmlhttp.send();
+        }
+
+        // displays the statistics JSON from the server
+        function displayStatistics(statistics) {
+            for (index in statistics) {
+                statsSection = statistics[index];
+                createTable(statsSection);
+            }
+        }
+
+        // displays a single section of the statistics in a table (e.g. biking)
+        function createTable(statsSection) {
+            var tableDiv = document.getElementById("tableContainer");
+            var table = initTableElement();
+            tableDiv.appendChild(table);
+            var headerRow = table.insertRow(0);
+            var rowNum = 1;
+            addToRow(headerRow, ['<b>' + statsSection['type'] + '</b>', ''])
+            for (var i = 0; i < Object.keys(statsSection).length; i++) {
+                var key = Object.keys(statsSection)[i];
+                if (key != 'type') {
+                    var row = table.insertRow(rowNum);
+                    rowNum++;
+                    addToRow(row, [key, statsSection[key]]);
+                }
+            }
+
+        }
+
+        // creates a table object with the appropriate styling applied
+        function initTableElement() {
+            var table = document.createElement("table");
+            table.classList.add("table");
+            table.classList.add("table-hover");
+            return table;
+        }
+
+        // adds the items to the row element
+        function addToRow(rowElement, items) {
+            for (var i = 0; i < items.length; i++) {
+                var cell = rowElement.insertCell(i);
+                if (items[i] in rowHeaders) {
+                    cell.innerHTML = rowHeaders[items[i]];
+                } else {
+                    cell.innerHTML = items[i];
+                }
+            }
+        }
+
+        // get the activity paths from the database
+        function getPaths() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayPaths(JSON.parse(xmlhttp.responseText));
+                }
+            }
+            xmlhttp.open("GET", pathUrl, true);
+            xmlhttp.send();
+        }
+
+        // displays the heatmap with points from all of the paths from the database
+        function displayPaths(paths) {
+            var points = [];
+            for (index in paths) {
+                points = points.concat(parsePath(paths[index]['path']));
+            }
+
+            // heatmap layer
+            heatmap = new google.maps.visualization.HeatmapLayer({
+                data: points,
+                map: map
+            });
+
+            var gradient = [
+                'rgba(0, 255, 255, 0)',
+                'rgba(0, 255, 255, 1)',
+                'rgba(0, 191, 255, 1)',
+                'rgba(0, 127, 255, 1)',
+                'rgba(0, 63, 255, 1)',
+                'rgba(0, 0, 255, 1)',
+                'rgba(0, 0, 223, 1)',
+                'rgba(0, 0, 191, 1)',
+                'rgba(0, 0, 159, 1)',
+                'rgba(0, 0, 127, 1)',
+                'rgba(63, 0, 91, 1)',
+                'rgba(127, 0, 63, 1)',
+                'rgba(191, 0, 31, 1)',
+                'rgba(255, 0, 0, 1)'
+            ]
+
+            heatmap.set('gradient', gradient);
+            heatmap.set('opacity', 1);
+            heatmap.set('radius', 50);
+        }
+
+        function parsePath(path) {
+            var points = [];
+            var coords = path.split(/[ ,]+/);
+            for (i = 0; i < coords.length; i++) {
+                var lat = coords[i]
+                var long = coords[++i]
+                if (!lat.isEmpty() && !long.isEmpty()) {
+                    points.push(new google.maps.LatLng(lat, long));
+                }
+            }
+            return points;
+        }
+
+        String.prototype.isEmpty = function () {
+            return (this.length === 0 || !this.trim());
+        };
+
+    </script>
+    <!-- Include the Google Maps library -->
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA2nlNoi_tXPHrq6ER0UbsOYXDDPSeghQ&libraries=visualization&callback=initMap">
+    </script>
+
+</body>
+</html>
