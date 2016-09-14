@@ -5,16 +5,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script>
+        // Highlight active tab
+        //$(document).ready(function () {
+        //    var url = window.location;
+        //    $('.navbar .nav').find('.active').removeClass('active');
+        //    $('.navbar .nav li a').each(function () {
+        //        if (this.href == url) {
+        //            $(this).parent().addClass('active');
+        //        }
+        //    });
+        //});
+    </script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
+
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="navbar-header">
+                <a href="Default.aspx" class="navbar-brand">Greenways</a>
+            </div>
+
+            <!-- Menu Items -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="HeatMap.aspx">Heat Map</a></li>
+                    <li><a href="About.aspx">About</a></li>               
+                </ul>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Register.aspx">Register</a></li>
+                    <li style="padding-top:14px">|</li>
+                    <li><a href="Login.aspx">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                <%-- Page Content will go here --%>
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
+
 </body>
 </html>
