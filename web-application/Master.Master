@@ -40,16 +40,16 @@
             <!-- Menu Items -->
             <div>
                 <ul class="nav navbar-nav">
-                    <li><a href="Default.aspx">Home</a></li>
+                    <%--<li><a href="Default.aspx">Home</a></li>--%>
                     <li><a href="HeatMap.aspx">Heat Map</a></li>
-                    <li><a href="About.aspx">About</a></li>               
+                    <li><a href="Statistics.aspx">Statistics</a></li>               
                 </ul>
             </div>
             <div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Register.aspx">Register</a></li>
+                    <li style="padding-top:15px; padding-right:15px">Hello, <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" /></li>
                     <li style="padding-top:14px">|</li>
-                    <li><a href="Login.aspx">Login</a></li>
+                    <li><a href="Login.aspx">Logout</a></li>
                 </ul>
             </div>
         </div>
