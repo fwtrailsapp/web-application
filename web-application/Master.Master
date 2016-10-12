@@ -42,7 +42,8 @@
                 <ul class="nav navbar-nav">
                     <%--<li><a href="Default.aspx">Home</a></li>--%>
                     <li><a href="HeatMap.aspx">Heat Map</a></li>
-                    <li><a href="Statistics.aspx">Statistics</a></li>               
+                    <li><a href="Statistics.aspx">Statistics</a></li>  
+                    <li><a href="test.aspx">Test</a></li>             
                 </ul>
             </div>
             <div>

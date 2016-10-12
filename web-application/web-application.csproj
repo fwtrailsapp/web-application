@@ -124,10 +124,15 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Statistics.aspx" />
-    <Content Include="statistics.js" />
+    <Content Include="js\statistics.js" />
     <Content Include="style.css" />
-    <Content Include="User_Login_CS.csproj" />
-    <Content Include="User_Login_CS.csproj.user" />
+    <Content Include="test.aspx" />
+    <Content Include="User_Login_CS.csproj">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="User_Login_CS.csproj.user">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -175,6 +180,13 @@
     </Compile>
     <Compile Include="Statistics.aspx.designer.cs">
       <DependentUpon>Statistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
