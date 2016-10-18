@@ -112,6 +112,7 @@
     </Content>
     <Content Include="README.md" />
     <Content Include="Master.Master" />
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,9 +129,6 @@
     <Content Include="style.css" />
     <Content Include="test.aspx" />
     <Content Include="User_Login_CS.csproj">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="User_Login_CS.csproj.user">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.config">
