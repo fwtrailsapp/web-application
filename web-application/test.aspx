@@ -6,7 +6,8 @@
         OnServerClick="DBConnectTest"
        runat="server" />
 
-    <div>Accounts:
-        
-        <%=sqlData%></div>
+    <div>
+        Accounts:
+        <%=sqlData%>
+    </div>
 </asp:Content>

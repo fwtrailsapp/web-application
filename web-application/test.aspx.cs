@@ -12,6 +12,7 @@ namespace web_application
     {
 
         public string sqlData;
+
         protected void Page_Load()
         {
 
@@ -43,13 +44,16 @@ namespace web_application
                     {
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            sqlData += reader.GetValue(i).ToString();
+                            sqlData += reader.GetValue(i).ToString() +"\r\n";
+
                         }
+                        
                     }
                 }
 
                 con.Close();
             }
+
         }
     }
 }
