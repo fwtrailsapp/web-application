@@ -24,6 +24,27 @@
         //});
     </script>
 
+    <style>
+
+        .navbar {
+
+        }
+
+        body {
+
+        }
+
+        .buttonLink {
+            background: none !important;
+            border: none;
+            margin-top: 15px;
+            /*optional*/
+            font-family: arial,sans-serif; /*input has OS specific font-family*/
+            color: #069;
+            cursor: pointer;
+        }
+    </style>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -48,9 +69,10 @@
             </div>
             <div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li style="padding-top:15px; padding-right:15px">Hello, <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" /></li>
+                    <li style="padding-top:15px; padding-right:5px">Hello, <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" /></li>
                     <li style="padding-top:14px">|</li>
-                    <li><a href="Login.aspx">Logout</a></li>
+                    <%--<li><a href="Login.aspx">Logout</a></li>--%>
+                    <li><button class="buttonLink" runat="server" onserverclick="Logout">Logout</button></li>
                 </ul>
             </div>
         </div>
