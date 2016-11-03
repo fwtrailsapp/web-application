@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace User_Login_CS
-{
-
-
-    public partial class Login
-    {
-
+namespace User_Login_CS {
+    
+    
+    public partial class Login {
+        
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace User_Login_CS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace User_Login_CS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Login1 control.
         /// </summary>

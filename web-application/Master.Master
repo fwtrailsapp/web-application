@@ -12,16 +12,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script>
-        // Highlight active tab
-        //$(document).ready(function () {
-        //    var url = window.location;
-        //    $('.navbar .nav').find('.active').removeClass('active');
-        //    $('.navbar .nav li a').each(function () {
-        //        if (this.href == url) {
-        //            $(this).parent().addClass('active');
-        //        }
-        //    });
-        //});
+
     </script>
 
     <style>
@@ -64,6 +55,7 @@
                     <%--<li><a href="Default.aspx">Home</a></li>--%>
                     <li><a href="HeatMap.aspx">Heat Map</a></li>
                     <li><a href="Statistics.aspx">Statistics</a></li>  
+                    <li><a href="Statistics.aspx">Maintenance</a></li>
                     <li><a href="test.aspx">Test</a></li>             
                 </ul>
             </div>
@@ -71,7 +63,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li style="padding-top:15px; padding-right:5px">Hello, <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" /></li>
                     <li style="padding-top:14px">|</li>
-                    <%--<li><a href="Login.aspx">Logout</a></li>--%>
                     <li><button class="buttonLink" runat="server" onserverclick="Logout">Logout</button></li>
                 </ul>
             </div>
