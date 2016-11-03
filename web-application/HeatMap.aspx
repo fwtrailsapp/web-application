@@ -9,7 +9,11 @@
     <div id="contents">
         <div class="panel map-container">
             <div class="panel-heading panel-heading-custom">
-                <div class="panel-title">Usage Heatmap</div>
+                <!--  start page-heading -->
+                <div id="page-heading">
+                    <h1>Heat Map</h1>
+                </div>
+                <!-- end page-heading -->
             </div>
             <div class="panel-body panel-body-custom">
                 <div id="map" style="height: 1000px; width: 1000px;"></div>
@@ -23,8 +27,7 @@
         //<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
         var map, heatmap;
-        function initMap()
-        {
+        function initMap() {
             // create the map object
             map = new google.maps.Map(document.getElementById('map'),
             {
@@ -45,12 +48,10 @@
                 map: map
             });
         }
-        function toggleHeatmap()
-        {
+        function toggleHeatmap() {
             heatmap.setMap(heatmap.getMap() ? null : map);
         }
-        function changeGradient()
-        {
+        function changeGradient() {
             var gradient =
             [
                 'rgba(0, 255, 255, 0)',
@@ -70,17 +71,14 @@
             ]
             heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
         }
-        function changeRadius()
-        {
+        function changeRadius() {
             heatmap.set('radius', heatmap.get('radius') ? null : 20);
         }
-        function changeOpacity()
-        {
+        function changeOpacity() {
             heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
         }
         // Heatmap data: 500 Points
-        function getPoints()
-        {
+        function getPoints() {
             return [
                 new google.maps.LatLng(41.116087600, -85.114176000)
             ]

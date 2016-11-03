@@ -4,5 +4,9 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
-    HOME
+    <!--  start page-heading -->
+	<div id="page-heading">
+		<h1>Home</h1>
+	</div>
+	<!-- end page-heading -->
 </asp:Content>

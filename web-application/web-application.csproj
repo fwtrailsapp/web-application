@@ -94,6 +94,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\datePicker.css" />
+    <Content Include="css\pro_dropline.css" />
+    <Content Include="css\pro_dropline_ie.css" />
     <Content Include="css\screen.css" />
     <Content Include="images\forms\bg_related_act.gif" />
     <Content Include="images\forms\bubble_inner.gif" />
@@ -224,9 +227,6 @@
     <Content Include="SQL\LoginDB.sql" />
     <Content Include="newUser.aspx" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="README.md" />
     <Content Include="Master.Master" />
     <Content Include="images\forms\Thumbs.db" />
