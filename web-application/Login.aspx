@@ -17,8 +17,7 @@
     <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
     <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
     <script type="text/javascript">
-        $(document).ready(function ()
-        {
+        $(document).ready(function () {
             $(document).pngFix();
         });
     </script>
@@ -56,7 +55,7 @@
                         <LayoutTemplate>
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
-                                    <td class="table-head" style="padding-bottom:10px"><b>Username</b>
+                                    <td class="table-head" style="padding-bottom: 10px"><b>Username</b>
                                     </td>
                                     <td>
                                         <asp:TextBox CssClass="login-inp" ID="UserName" runat="server" autocomplete="disabled"></asp:TextBox>
@@ -64,7 +63,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="table-head" style="padding-bottom:10px"><b>Password</b>
+                                    <td class="table-head" style="padding-bottom: 10px"><b>Password</b>
                                     </td>
                                     <td>
                                         <asp:TextBox CssClass="login-inp" ID="Password" runat="server" TextMode="Password"></asp:TextBox>
@@ -96,27 +95,29 @@
             <div class="clear"></div>
             <a href="" class="forgot-pwd">Forgot Password?</a>
         </div>
-        	<!--  start forgotbox ................................................................................... -->
-	<div id="forgotbox">
-		<div id="forgotbox-text">Please send us your email and we'll reset your password.</div>
-		<!--  start forgot-inner -->
-		<div id="forgot-inner">
-		<table border="0" cellpadding="0" cellspacing="0">
-		<tr>
-			<th>Email address:</th>
-			<td><input type="text" value=""   class="login-inp" /></td>
-		</tr>
-		<tr>
-			<th> </th>
-			<td><input type="button" class="submit-login"  /></td>
-		</tr>
-		</table>
-		</div>
-		<!--  end forgot-inner -->
-		<div class="clear"></div>
-		<a href="" class="back-login">Back to login</a>
-	</div>
-	<!--  end forgotbox -->
+        <!--  start forgotbox ................................................................................... -->
+        <div id="forgotbox">
+            <div id="forgotbox-text">Please send us your email and we'll reset your password.</div>
+            <!--  start forgot-inner -->
+            <div id="forgot-inner">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>Email address:</th>
+                        <td>
+                            <input type="text" value="" class="login-inp" /></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input type="button" class="submit-login" /></td>
+                    </tr>
+                </table>
+            </div>
+            <!--  end forgot-inner -->
+            <div class="clear"></div>
+            <a href="" class="back-login">Back to login</a>
+        </div>
+        <!--  end forgotbox -->
 
     </div>
 </body>
