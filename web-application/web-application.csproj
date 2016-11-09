@@ -250,6 +250,7 @@
     <Content Include="js\statistics.js" />
     <Content Include="style.css" />
     <Content Include="test.aspx" />
+    <Content Include="Tickets.aspx" />
     <Content Include="User_Login_CS.csproj">
       <SubType>Designer</SubType>
     </Content>
@@ -307,6 +308,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.aspx.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tickets.aspx.designer.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

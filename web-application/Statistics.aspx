@@ -2,5 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
-    STATS
+        <!--  start page-heading -->
+	<div id="page-heading">
+		<h1>Stats</h1>
+	</div>
+	<!-- end page-heading -->
 </asp:Content>

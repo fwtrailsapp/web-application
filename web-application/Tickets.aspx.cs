@@ -1,16 +1,16 @@
-﻿using System.Data;
-using System.Configuration;
-using ConfigurationSettings = System.Configuration.ConfigurationManager;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Web.Security;
-using System;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace web_application
 {
-    public partial class test : System.Web.UI.Page
+    public partial class Tickets : System.Web.UI.Page
     {
-
         public string sqlData;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -18,17 +18,14 @@ namespace web_application
 
         }
 
-        protected void DBConnectTest(object sender, EventArgs e)
+        public void Access_DB(object sender, EventArgs e)
         {
-            ConnectionStringSettings settings;
-            settings = System.Configuration.ConfigurationManager.ConnectionStrings["GreenwayConnection"];
-            string constr = settings.ConnectionString;
-
+            string constr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LoginDB; Integrated Security = True";
             using (SqlConnection con = new SqlConnection(constr))
 
             using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.CommandText = "SELECT * FROM dbo.Account";
+                cmd.CommandText = "SELECT * FROM dbo.Ticket";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
 
@@ -44,16 +41,14 @@ namespace web_application
                     {
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            sqlData += reader.GetValue(i).ToString() +"\r\n";
-
+                            sqlData += reader.GetValue(i).ToString();
                         }
-                        
+
                     }
                 }
 
                 con.Close();
             }
-
         }
     }
 }

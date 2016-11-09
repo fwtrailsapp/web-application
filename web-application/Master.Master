@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="web_application.Master" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -260,11 +260,15 @@
                         <li><a href="/Statistics.aspx"><b>Statistics</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
                     </ul>
 
+                    <%--                                        <ul class="select">
+                        <li><a href="/test.aspx"><b>Test</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+                    </ul>--%>
+
                     <div class="nav-divider">&nbsp;</div>
 
                     <ul class="select">
                         <li><a href="/Tickets.aspx"><b>Tickets</b><!--[if IE 7]><!--></a><!--<![endif]-->
-                            <!--[if lte IE 6]><table><tr><td><![endif]-->
+                            <%--                            <!--[if lte IE 6]><table><tr><td><![endif]-->
                             <div class="select_sub">
                                 <ul class="sub">
                                     <li><a href="#nogo">Active</a></li>
@@ -272,7 +276,7 @@
                                 </ul>
                             </div>
                             <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-                        </li>
+                            --%></li>
                     </ul>
 
                     <div class="clear"></div>
@@ -287,7 +291,7 @@
     </div>
     <!--  start nav-outer-repeat................................................... END -->
 
-    <div class="clear"></div>
+    <%--    <div class="clear"></div>
 
     <!-- start content-outer ........................................................................................................................START -->
     <div id="content-outer">
@@ -296,7 +300,7 @@
     </div>
     <!--  end content-outer........................................................END -->
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>--%>
 
 
     <form id="form1" runat="server">
@@ -307,7 +311,7 @@
         </div>
     </form>
 
-    <!-- start footer -->
+    <%--    <!-- start footer -->
     <div id="footer">
         <!-- <div id="footer-pad">&nbsp;</div> -->
         <!--  start footer-left -->
@@ -317,7 +321,6 @@
         <!--  end footer-left -->
         <div class="clear">&nbsp;</div>
     </div>
-    <!-- end footer -->
-
+    <!-- end footer -->--%>
 </body>
 </html>
