@@ -1,0 +1,38 @@
+﻿.bottom-right-ticket-border{
+    -moz-border-radius:0 0 15px 0;
+    -webkit-border-radius:0 0 15px 0;
+    border: 3px solid #D3D9DF; 
+    background-color: #D3D9DF;
+    border-left:0;
+    padding-right: 10px;
+}
+
+.bottom-left-ticket-border{
+    -moz-border-radius:0 0 0 15px;
+    -webkit-border-radius:0 0 0 15px;
+    border: 3px solid #D3D9DF;
+    background-color: #D3D9DF;
+    border-right:0;
+    padding-left: 10px;
+}
+
+.bottom-center-ticket-border {
+    border: 3px solid #D3D9DF;
+    background-color: #D3D9DF;
+}
+
+.btn-close {
+  -webkit-border-radius: 5px;
+  -moz-border-radius:5px;
+  border-radius: 5px;
+  color: black;
+  padding-right: 20px;
+  padding-left: 20px;
+  background: lightgrey;
+  border:0;
+  font-weight:bold;
+}
+
+.btn-close:hover {
+  background: red;
+}

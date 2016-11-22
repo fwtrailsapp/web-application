@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />--%>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -311,7 +311,7 @@
         </div>
     </form>
 
-    <%--    <!-- start footer -->
+        <!-- start footer -->
     <div id="footer">
         <!-- <div id="footer-pad">&nbsp;</div> -->
         <!--  start footer-left -->
@@ -321,6 +321,6 @@
         <!--  end footer-left -->
         <div class="clear">&nbsp;</div>
     </div>
-    <!-- end footer -->--%>
+    <!-- end footer -->
 </body>
 </html>

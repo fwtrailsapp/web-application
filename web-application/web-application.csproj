@@ -98,6 +98,7 @@
     <Content Include="css\pro_dropline.css" />
     <Content Include="css\pro_dropline_ie.css" />
     <Content Include="css\screen.css" />
+    <Content Include="css\tickets.css" />
     <Content Include="images\forms\bg_related_act.gif" />
     <Content Include="images\forms\bubble_inner.gif" />
     <Content Include="images\forms\bubble_left.gif" />

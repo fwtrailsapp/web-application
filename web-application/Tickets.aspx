@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Tickets.aspx.cs" Inherits="web_application.Tickets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="css/tickets.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
 
@@ -8,11 +9,14 @@
     <div id="page-heading">
         <h1>Tickets</h1>
     </div>
+
     <!-- end page-heading -->
 
-    <div style="border: 2px solid black; height: 750px; width: 1000px; margin: 0 auto;">
+    <div style="background-color: #D3D9DF; height: 100%; width: 850px; margin: 0 auto;">
 
-        <div style="background-color:lightgray;border-top: 1px solid black; border-bottom: 1px solid black; height: 100px; margin-top: 25px">
+        <%=ticketList %>
+
+        <%--<div style="background-color:lightgray;border-top: 1px solid black; border-bottom: 1px solid black; height: 100px; margin-top: 25px">
             <asp:Table runat="server" Width="95%" Height="100%">
                 <asp:TableRow>
                     <asp:TableCell>
@@ -57,9 +61,9 @@ This is a random description. I hope you like it. Blah blah, haha. Keep typing t
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-        </div>
+        </div>--%>
 
-        <div style="background-color:lightgray;border-top: 1px solid black; border-bottom: 1px solid black; height: 100px; margin-top: 25px">
+        <%--<div style="background-color:lightgray;border-top: 1px solid black; border-bottom: 1px solid black; height: 100px; margin-top: 25px">
             <asp:Table runat="server" Width="95%" Height="100%">
                 <asp:TableRow>
                     <asp:TableCell>
@@ -104,19 +108,6 @@ This is a random description. I hope you like it. Blah blah, haha. Keep typing t
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-        </div>
-
-    </div>
-
-
-    <input type="button" id="btn2" value="submit"
-        onserverclick="Access_DB"
-        runat="server" />
-
-
-    <div>
-        <h1>Tickets:</h1>
-        Accounts:
-        <%=sqlData%>
+        </div>--%>
     </div>
 </asp:Content>
