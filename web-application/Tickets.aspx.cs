@@ -17,6 +17,13 @@ namespace web_application
         string type = "Unknown";
         string desc = "No Description.";
         string buttonId = "";
+        string active = "ACTIVE";
+        string title = "No Title";
+        string date = "Unknown";
+        string username = "unknown";
+        string notes = "";
+        string typeColor = "blue";
+
         int rowNumber = 0;
 
         public string sqlData;
@@ -49,21 +56,27 @@ namespace web_application
                                 id = reader.GetValue(i).ToString();
                                 type = reader.GetValue(i + 1).ToString();
                                 desc = reader.GetValue(i + 2).ToString();
+                                title = reader.GetValue(i + 6).ToString();
+                                date = reader.GetValue(i + 7).ToString();
+                                username = reader.GetValue(i + 8).ToString();
+                                notes = reader.GetValue(i + 9).ToString();
+                                typeColor = reader.GetValue(i + 10).ToString();
+
+                                //Remove spaces for the color
+                                typeColor = typeColor.Replace(" ", "");
+
                                 buttonId = "CloseButton" + rowNumber;
                                 ticketList = string.Concat(ticketList,
                                    $"<div style=\"background-color:white;border: 1px solid lightgrey; border-radius: 15px; box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4); height: 102px; margin-top: 25px\">"
                                        + "<table style=\"width:100%; height:95%;border-collapse: separate !important;\">"
                                            + "<tr style=\"width:300px\">"
                                                + $"<td style=\"text-align:center;\" rowspan=\"2\"> #{id} </td>"
-                                               + $"<td style=\"text-align:left;padding: 5px 0 0 15px;font-size:18px;rowspan=\"2\"\"><b>There is a lot of water on the pathway.</b></td>"
+                                               + $"<td style=\"text-align:left;padding: 5px 0 0 15px;font-size:18px;\"><b>{title}</b></td>"
                                                + $"<td> </td>"
-                                               + $"<td style=\"text-align:center;background-color:blue;color:white; -moz-border-radius:0 15px 0 0;-webkit-border-radius:0 15px 0 0;width:150px;height:20px;\"><b>{type}</b></td>"
+                                               + $"<td style=\"text-align:center;background-color:{typeColor};color:white; -moz-border-radius:0 15px 0 0;-webkit-border-radius:0 15px 0 0;width:150px;height:20px;\"><b>{type}</b></td>"
                                            + "</tr>"
                                            + "<tr>"                                               
                                                + $"<td style=\"text-align:left;padding:0 0 0 15px;\" rowspan=\"2\">{desc}</td>"                                               
-                                               + $"<td> </td>"
-                                               + $"<td> </td>"
-                                               + $"<td> </td>"
                                            + "</tr>"
                                            + "<tr>"
                                                + $"<td style=\"text-align:center; background-color: green; color:white;width:125px;\"><b>ACTIVE</b></td>"
@@ -72,12 +85,21 @@ namespace web_application
                                            + "</tr>"
                                            + "<tr style=\"height:24px;\">"
                                                + $"<td> </td>"
-                                               + $"<td> </td>"
                                            + "</tr>"
                                            + "<tr style=\"width:150px\">"
-                                               + $"<td class=\"bottom-left-ticket-border\" style=\"border-right: solid 1px lightgrey;\"><a>View Image</a> </td>"
-                                               + $"<td class=\"bottom-center-ticket-border\">Submitted: Today</td>"
-                                               + $"<td class=\"bottom-center-ticket-border\">Submitted By: User </td>"
+                                               + $"<td class=\"bottom-left-ticket-border\">" 
+                                                    + "<div style=\"float:left;overflow:hidden;width:28%;border-right:1px solid black;text-align:center;padding-right:10px;\">"
+                                                        + "<a href=\"\"> <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></a>" 
+                                                    + "</div>"
+                                                    + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
+                                                        + "<a href=\"\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></a>"
+                                                    + "</div>"
+                                                    + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
+                                                        + "<a href=\"\"> <i class=\"fa fa-comment\" aria-hidden=\"true\"></i></a>"
+                                                    + "</div>"
+                                               + "</td>"
+                                               + $"<td class=\"bottom-center-ticket-border\" style=\"text-align:center;\">Submitted: {date}</td>"
+                                               + $"<td class=\"bottom-center-ticket-border\">Submitted by: {username}</td>"
                                                + $"<td class=\"bottom-right-ticket-border\" style=\" \"> </td>"
                                            + "</tr>"
                                        + "</table>"

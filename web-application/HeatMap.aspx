@@ -7,16 +7,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
 
     <div id="contents">
-        <div class="panel map-container">
+        <div class="panel map-container" style="background-color:#D3D9DF">
             <div class="panel-heading panel-heading-custom">
                 <!--  start page-heading -->
                 <div id="page-heading">
                     <h1>Heat Map</h1>
+                    <hr style="width:98%;color:lightgray;" />
                 </div>
                 <!-- end page-heading -->
             </div>
             <div class="panel-body panel-body-custom">
-                <div id="map" style="height: 1000px; width: 1000px;"></div>
+                <div id="map" style="height: 600px; width: 600px;margin: 0 auto;"></div>
             </div>
         </div>
     </div>

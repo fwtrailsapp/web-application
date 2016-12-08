@@ -923,8 +923,8 @@ a:hover.action-delete {
 }
 
 .nav-outer-repeat {
-    background: url(../images/shared/nav/repeat.jpg) repeat-x;
-    height: 77px;
+    background: url(../images/shared/nav/new_repeat.jpg) repeat-x;
+    height: 38px;
 }
 
 .nav-outer {
@@ -949,18 +949,18 @@ a:hover.action-delete {
 .account-content {
     background: #454545 url(../images/shared/nav/account_drop_bg.gif) no-repeat bottom;
     display: none;
-    left: 5px;
-    padding-bottom: 20px;
+    left: 355px;
     position: absolute;
-    top: 30px;
-    width: 170px;
+    top: 35px;
+    width: 100px;
+    text-align: center;
 }
 
 .account-drop-inner {
     font-size: 0px;
     line-height: 0px;
-    margin: 20px auto 0 auto;
-    width: 140px;
+    margin: 10px auto 0 auto;
+    width: 100px;
 }
 
 .showhide-account {
@@ -980,7 +980,7 @@ a:hover.action-delete {
 }
 
     .account-drop-inner a:hover {
-        color: #94b52c;
+        color: #D3D9DF;
     }
 
 .acc-line {
@@ -1209,7 +1209,7 @@ Copyright (c) 2005-2007 Stu Nicholls. All rights reserved. This stylesheet and t
     margin: 0 20px;
     border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
-    background: url(../images/shared/icon_idlogo.jpg) no-repeat 0 12px;
+    /*background: url(../images/shared/icon_idlogo.jpg) no-repeat 0 12px;*/
 }
 
     #footer-left a {
