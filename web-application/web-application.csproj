@@ -242,6 +242,12 @@
     <Content Include="js\loginSuccess.js" />
     <Content Include="js\prefixfree.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="js\PopupDialog.js" />
+    <None Include="scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.1.1.js" />
+    <Content Include="scripts\jquery-3.1.1.min.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.js" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="SQL\LoginDB.sql" />
     <Content Include="newUser.aspx" />
     <Content Include="packages.config" />
@@ -253,6 +259,8 @@
     <Content Include="images\shared\Thumbs.db" />
     <Content Include="images\table\Thumbs.db" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <Content Include="scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -361,7 +369,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54873</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53434/</IISUrl>
+          <IISUrl>http://localhost:4356/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
