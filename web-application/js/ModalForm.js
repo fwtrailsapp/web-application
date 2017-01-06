@@ -5,7 +5,10 @@ $(document).ready(function () {
         'buttons' : {
             'Cancel': {
                 text: 'Cancel',
-                click: function(){
+                click: function () {
+                    debugger;
+                    $('#createTitle').val("");
+                    $('#createDesc').val("");
                     $(this).dialog("close");
                 }
             },
@@ -16,7 +19,10 @@ $(document).ready(function () {
                 }
             }
         },
-        autoOpen: false
+        autoOpen: false,
+        height: 415,
+        width: 350,
+        modal: true
     });
 
     $('#btnCreateTicket').click(function (e) {

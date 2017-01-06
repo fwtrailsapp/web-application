@@ -1,20 +1,20 @@
 ﻿
 
-.bottom-right-ticket-border{
-    -moz-border-radius:0 0 15px 0;
-    -webkit-border-radius:0 0 15px 0;
-    border: 3px solid #D3D9DF; 
+.bottom-right-ticket-border {
+    -moz-border-radius: 0 0 15px 0;
+    -webkit-border-radius: 0 0 15px 0;
+    border: 3px solid #D3D9DF;
     background-color: #D3D9DF;
-    border-left:0;
+    border-left: 0;
     padding-right: 10px;
 }
 
-.bottom-left-ticket-border{
-    -moz-border-radius:0 0 0 15px;
-    -webkit-border-radius:0 0 0 15px;
+.bottom-left-ticket-border {
+    -moz-border-radius: 0 0 0 15px;
+    -webkit-border-radius: 0 0 0 15px;
     border: 1px solid #D3D9DF;
     background-color: #D3D9DF;
-    border-right:0;
+    border-right: 0;
     padding-left: 10px;
 }
 
@@ -24,20 +24,20 @@
 }
 
 .btn-close {
-  -webkit-border-radius: 5px;
-  -moz-border-radius:5px;
-  border-radius: 5px;
-  color: black;
-  padding-right: 20px;
-  padding-left: 20px;
-  background: lightgrey;
-  border:0;
-  font-weight:bold;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: black;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: lightgrey;
+    border: 0;
+    font-weight: bold;
 }
 
-.btn-close:hover {
-  background: red;
-}
+    .btn-close:hover {
+        background: red;
+    }
 
 #overlay {
     position: fixed;
@@ -46,76 +46,77 @@
     width: 100%;
     height: 100%;
     background-color: #000;
-    filter:alpha(opacity=50);
-    -moz-opacity:0.5;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
     -khtml-opacity: 0.5;
     opacity: 0.5;
     z-index: 10000;
 }
 
 #divMain {
-  background-color: white;
-  border: 1px solid lightgrey;
-  border-radius: 15px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
-  height: 102px;
-  margin-top: 25px;
-  width: 500px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    height: 102px;
+    margin-top: 25px;
+    width: 500px;
 }
+
 #table {
-  width: 100%;
-  height: 95%;
-  border-collapse: separate !important;
+    width: 100%;
+    height: 95%;
+    border-collapse: separate !important;
 }
 
 #ticketDiv {
-    background-color:white;
-    border: 1px solid lightgrey; 
-    border-radius: 15px; 
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4); 
-    height: 102px; 
-    margin-top: 25px
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    height: 102px;
+    margin-top: 25px;
 }
 
 #r1c1 {
-    text-align:center;
+    text-align: center;
 }
 
 #r1c2 {
-    text-align:left;
+    text-align: left;
     padding: 5px 0 0 15px;
-    font-size:18px;
+    font-size: 18px;
 }
 
 #r1c3 {
-    text-align:center;
-    color:white; 
-    -moz-border-radius:0 15px 0 0;
-    -webkit-border-radius:0 15px 0 0;
-    width:150px;
-    height:20px;
+    text-align: center;
+    color: white;
+    -moz-border-radius: 0 15px 0 0;
+    -webkit-border-radius: 0 15px 0 0;
+    width: 150px;
+    height: 20px;
 }
 
 /*150 characters for description*/
 #r2c1 {
-    text-align:center;  
-    color:white;
-    width:125px;
+    text-align: center;
+    color: white;
+    width: 125px;
 }
 
 #r2c2 {
-    text-align:left;
-    padding:0 0 0 15px;
-    vertical-align:top;
+    text-align: left;
+    padding: 0 0 0 15px;
+    vertical-align: top;
 }
 
 #r2c3 {
-    width:150px;
-    text-align:center;
+    width: 150px;
+    text-align: center;
 }
 
 #r3c1 {
-    height:24px;
+    height: 24px;
 }
 
 /* The Modal (background) */
@@ -149,11 +150,30 @@
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* Create Ticket Dialog*/
+label {
+    display: block;
+    color: deepskyblue;
 }
-body {
+
+/*input {
+    display: block;
+}*/
+
+    input.text {
+        margin-bottom: 12px;
+        width: 95%;
+        padding: .4em;
+    }
+
+.validateTips {
+    border: 1px solid transparent;
+    padding: 0.3em;
 }

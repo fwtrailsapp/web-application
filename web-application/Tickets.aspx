@@ -25,7 +25,23 @@
             <a href="" id="btnCreateTicket">Create a Ticket</a>
 
             <div id="dialog" title="Create a Ticket">
-                <%--Form Here--%>
+
+                <p class="validateTips">All form fields are required.</p>
+
+                <form id="createTicketForm">
+                    <label for="createTitle">Title</label>
+                    <input type="text" name="createTitle" id="createTitle" value="" class="text ui-widget-content ui-corner-all" maxlength="75">
+                    <label for="createDesc">Description</label>
+                    <textarea name="createDesc" id="createDesc" class="text ui-widget-content ui-corner-all" maxlength="150" style="height:100px;width:300px;resize:none;"></textarea>
+                    <label for="createType">Type</label>
+                    <select name="createType" id="createType" class="text ui-widget-content ui-corner-all">
+                        <option>Water</option>
+                        <option>Pothole</option>
+                        <option>Tree</option>
+                        <option>Trash</option>
+                        <option>Other</option>
+                    </select>
+                </form>
             </div>
 
             <%=ticketList %>
