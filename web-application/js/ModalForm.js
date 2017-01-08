@@ -3,15 +3,6 @@ $(document).ready(function () {
 
     $('#dialog').dialog({
         'buttons' : {
-            'Cancel': {
-                text: 'Cancel',
-                click: function () {
-                    debugger;
-                    $('#createTitle').val("");
-                    $('#createDesc').val("");
-                    $(this).dialog("close");
-                }
-            },
             'Create': {
                 text: 'Create',
                 click: function () {
@@ -19,15 +10,24 @@ $(document).ready(function () {
                 }
             }
         },
+        'Cancel': {
+            text: 'Cancel',
+            click: function () {
+                debugger;
+                $('#createTitle').val("");
+                $('#createDesc').val("");
+                $(this).dialog("close");
+            }
+        },
         autoOpen: false,
-        height: 415,
-        width: 350,
-        modal: true
-    });
+    height: 415,
+    width: 350,
+    modal: true
+});
 
-    $('#btnCreateTicket').click(function (e) {
-        e.preventDefault();
-        $("#dialog").dialog("open");
-    });
+$('#btnCreateTicket').click(function (e) {
+    e.preventDefault();
+    $("#dialog").dialog("open");
+});
 
 });

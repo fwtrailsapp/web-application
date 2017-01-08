@@ -25,8 +25,9 @@ namespace web_application
         string title = "No Title";
         string date = "Unknown";
         string username = "unknown";
-        string notes = "";
+        public string notes;
         string typeColor = "blue";
+        string commentId = "";
 
         int rowNumber = 0;
 
@@ -67,10 +68,11 @@ namespace web_application
                                 notes = reader.GetValue(i + 9).ToString();
                                 typeColor = reader.GetValue(i + 10).ToString();
 
-                                //Remove spaces for the color
+                                //Remove spaces
                                 typeColor = typeColor.Replace(" ", "");
 
                                 buttonId = "CloseButton" + id;
+                                commentId = "CommentButton" + id;
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
                                 gpsLink = "https://www.google.com/maps/place/" + gps;
@@ -99,7 +101,7 @@ namespace web_application
                                                         + $"<a href=\"{gpsLink}\" target=\"popup\" onclick=\"window.open('{gpsLink}','popup','width=600,height=600','left=50%'); return false;\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                     + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
-                                                        + "<a href=\"\"> <i class=\"fa fa-comment\" aria-hidden=\"true\"></i></a>"
+                                                        + $"<a href=\"\" id=\"{commentId}\"> <i class=\"fa fa-comment\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                + "</td>"
                                                + $"<td class=\"bottom-center-ticket-border\" style=\"text-align:center;\">Submitted: {date}</td>"

@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="css/tickets.css" rel="stylesheet" />
     <script type="text/javascript" src="js/ModalForm.js"></script>
+    <script type="text/javascript" src="js/CommentModal.js"></script>
     <script src="https://use.fontawesome.com/4193f3e666.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
@@ -32,7 +33,7 @@
                     <label for="createTitle">Title</label>
                     <input type="text" name="createTitle" id="createTitle" value="" class="text ui-widget-content ui-corner-all" maxlength="75">
                     <label for="createDesc">Description</label>
-                    <textarea name="createDesc" id="createDesc" class="text ui-widget-content ui-corner-all" maxlength="150" style="height:100px;width:300px;resize:none;"></textarea>
+                    <textarea name="createDesc" id="createDesc" class="text ui-widget-content ui-corner-all" maxlength="150" style="height: 100px; width: 300px; resize: none;"></textarea>
                     <label for="createType">Type</label>
                     <select name="createType" id="createType" class="text ui-widget-content ui-corner-all">
                         <option>Water</option>
@@ -41,6 +42,13 @@
                         <option>Trash</option>
                         <option>Other</option>
                     </select>
+                </form>
+            </div>
+
+            <div id="commentDialog" title="Comment">
+
+                <form id="commentForm">
+                    <%=notes %>
                 </form>
             </div>
 

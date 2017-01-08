@@ -221,6 +221,7 @@
     <Content Include="images\table\table_icon_4.gif" />
     <Content Include="images\table\table_icon_5.gif" />
     <Content Include="images\table\table_sort_arrow.gif" />
+    <Content Include="js\CommentModal.js" />
     <Content Include="js\jquery\Copy of custom_jquery.js" />
     <Content Include="js\jquery\custom_jquery.js" />
     <Content Include="js\jquery\date.js" />
@@ -247,7 +248,6 @@
     <Content Include="js\loginSuccess.js" />
     <Content Include="js\prefixfree.min.js" />
     <Content Include="Login.aspx" />
-    <Content Include="js\PopupDialog.js" />
     <None Include="scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="scripts\jquery-3.1.1.js" />
     <Content Include="scripts\jquery-3.1.1.min.js" />
