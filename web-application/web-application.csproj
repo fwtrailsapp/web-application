@@ -221,6 +221,7 @@
     <Content Include="images\table\table_icon_4.gif" />
     <Content Include="images\table\table_icon_5.gif" />
     <Content Include="images\table\table_sort_arrow.gif" />
+    <Content Include="js\CloseModal.js" />
     <Content Include="js\CommentModal.js" />
     <Content Include="js\jquery\Copy of custom_jquery.js" />
     <Content Include="js\jquery\custom_jquery.js" />

@@ -1,18 +1,21 @@
 ﻿
-$(document).ready(function () {
+$(document).ready(function ()
+{
 
     $('#dialog').dialog({
-        'buttons' : {
+        'buttons': {
             'Create': {
                 text: 'Create',
-                click: function () {
+                click: function ()
+                {
                     // Call Web API
                 }
             }
         },
         'Cancel': {
             text: 'Cancel',
-            click: function () {
+            click: function ()
+            {
                 debugger;
                 $('#createTitle').val("");
                 $('#createDesc').val("");
@@ -20,14 +23,15 @@ $(document).ready(function () {
             }
         },
         autoOpen: false,
-    height: 415,
-    width: 350,
-    modal: true
-});
+        height: 415,
+        width: 350,
+        modal: true
+    });
 
-$('#btnCreateTicket').click(function (e) {
-    e.preventDefault();
-    $("#dialog").dialog("open");
-});
+    $('#btnCreateTicket').click(function (e)
+    {
+        e.preventDefault();
+        $("#dialog").dialog("open");
+    });
 
 });

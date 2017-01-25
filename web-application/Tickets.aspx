@@ -8,6 +8,7 @@
     <link href="css/tickets.css" rel="stylesheet" />
     <script type="text/javascript" src="js/ModalForm.js"></script>
     <script type="text/javascript" src="js/CommentModal.js"></script>
+    <script type="text/javascript" src="js/CloseModal.js"></script>
     <script src="https://use.fontawesome.com/4193f3e666.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
@@ -50,6 +51,10 @@
                 <form id="commentForm">
                     <%=notes %>
                 </form>
+            </div>
+
+            <div id="closeDialog" title="Warning">
+                Are you sure you want to close this ticket?
             </div>
 
             <%=ticketList %>
