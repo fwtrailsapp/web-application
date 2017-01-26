@@ -13,7 +13,7 @@ namespace web_application
     public partial class Tickets : System.Web.UI.Page
     {
         public string ticketList;
-        string id = "-1";
+        public string id = "-1";
         string type = "Unknown";
         string desc = "No Description.";
         string buttonId = "";

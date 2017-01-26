@@ -1,5 +1,6 @@
 ﻿$(document).ready(function ()
 {
+    var ticketId;
 
     $('#closeDialog').dialog({
         'buttons': {
@@ -24,9 +25,11 @@
         modal: true
     });
 
-    $('#CloseButton1').click(function (e)
+    $('[id^=CloseButton]').click(function (e)
     {
         debugger;
+        ticketId = this.id.replace("CloseButton", "");
+        document.getElementById("closeDialog").innerHTML = "Are you sure you want to close ticket #" + ticketId + "?";
         e.preventDefault();
         $("#closeDialog").dialog("open");
     });
