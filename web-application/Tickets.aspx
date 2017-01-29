@@ -48,13 +48,10 @@
 
             <div id="commentDialog" title="Comment">
 
-                <form id="commentForm">
-                    <%=notes %>
-                </form>
+                    <textarea id="commentTextArea" style="resize:none" rows="8" cols="42" disabled="disabled"></textarea>
             </div>
 
             <div id="closeDialog" title="Warning">
-                
             </div>
 
             <%=ticketList %>
