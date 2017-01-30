@@ -95,7 +95,7 @@ namespace web_application
                                            + "<tr style=\"width:150px\">"
                                                + $"<td class=\"bottom-left-ticket-border\">" 
                                                     + "<div style=\"float:left;overflow:hidden;width:28%;border-right:1px solid black;text-align:center;padding-right:10px;\">"
-                                                        + "<a href=\"https://www.google.com/\" target=\"popup\" onclick=\"window.open('https://www.google.com/','popup','width=600,height=600'); return false;\"> <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></a>"
+                                                        + $"<a href=\"\" id=\"{imgId}\"> <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                     + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
                                                         + $"<a href=\"{gpsLink}\" target=\"popup\" onclick=\"window.open('{gpsLink}','popup','width=600,height=600','left=50%'); return false;\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></a>"

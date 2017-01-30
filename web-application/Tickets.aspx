@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/ModalForm.js"></script>
     <script type="text/javascript" src="js/CommentModal.js"></script>
     <script type="text/javascript" src="js/CloseModal.js"></script>
+    <script type="text/javascript" src="js/ImageModal.js"></script>
     <script src="https://use.fontawesome.com/4193f3e666.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
@@ -48,10 +49,23 @@
 
             <div id="commentDialog" title="Comment">
 
-                    <textarea id="commentTextArea" style="resize:none" rows="8" cols="42" disabled="disabled"></textarea>
+                <textarea id="commentTextArea" style="resize: none" rows="8" cols="42" disabled="disabled"></textarea>
             </div>
 
             <div id="closeDialog" title="Warning">
+            </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- The Close Button -->
+                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
             </div>
 
             <%=ticketList %>
