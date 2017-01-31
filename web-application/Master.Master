@@ -70,20 +70,6 @@
         });
     </script>
 
-    <!--  styled file upload script -->
-    <script src="js/jquery/jquery.filestyle.js" type="text/javascript"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function ()
-        {
-            $("input.file_1").filestyle({
-                image: "images/forms/choose-file.gif",
-                imageheight: 21,
-                imagewidth: 78,
-                width: 310
-            });
-        });
-    </script>
-
     <!-- Custom jquery scripts -->
     <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
 
@@ -102,79 +88,6 @@
                 top: -35,
                 left: 5
             });
-        });
-    </script>
-
-
-    <!--  date picker script -->
-    <link rel="stylesheet" href="css/datePicker.css" type="text/css" />
-    <script src="js/jquery/date.js" type="text/javascript"></script>
-    <script src="js/jquery/jquery.datePicker.js" type="text/javascript"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function ()
-        {
-
-            // initialise the "Select date" link
-            $('#date-pick')
-                .datePicker(
-                    // associate the link with a date picker
-                    {
-                        createButton: false,
-                        startDate: '01/01/2005',
-                        endDate: '31/12/2020'
-                    }
-                ).bind(
-                    // when the link is clicked display the date picker
-                    'click',
-                    function ()
-                    {
-                        updateSelects($(this).dpGetSelected()[0]);
-                        $(this).dpDisplay();
-                        return false;
-                    }
-                ).bind(
-                    // when a date is selected update the SELECTs
-                    'dateSelected',
-                    function (e, selectedDate, $td, state)
-                    {
-                        updateSelects(selectedDate);
-                    }
-                ).bind(
-                    'dpClosed',
-                    function (e, selected)
-                    {
-                        updateSelects(selected[0]);
-                    }
-                );
-
-            var updateSelects = function (selectedDate)
-            {
-                var selectedDate = new Date(selectedDate);
-                $('#d option[value=' + selectedDate.getDate() + ']').attr('selected', 'selected');
-                $('#m option[value=' + (selectedDate.getMonth() + 1) + ']').attr('selected', 'selected');
-                $('#y option[value=' + (selectedDate.getFullYear()) + ']').attr('selected', 'selected');
-            }
-            // listen for when the selects are changed and update the picker
-            $('#d, #m, #y')
-                .bind(
-                    'change',
-                    function ()
-                    {
-                        var d = new Date(
-                                    $('#y').val(),
-                                    $('#m').val() - 1,
-                                    $('#d').val()
-                                );
-                        $('#date-pick').dpSetSelected(d.asString());
-                    }
-                );
-
-            // default the position of the selects to today
-            var today = new Date();
-            updateSelects(today.getTime());
-
-            // and update the datePicker to reflect it...
-            $('#d').trigger('change');
         });
     </script>
 
@@ -222,35 +135,10 @@
 
             <!-- start nav-right -->
             <div id="nav-right">
-
-                <%--                <div class="nav-divider">&nbsp;</div>
-                <div class="showhide-account">
-                    <img src="images/shared/nav/nav_myaccount.gif" width="93" height="14" alt="" />
-                </div>--%>
                 <div class="nav-divider">&nbsp;</div>
                 <a href="" id="logout" class="buttonLink" runat="server" onserverclick="Logout">
                     <img src="images/shared/nav/nav_logout.gif" width="64" height="14" alt="" /></a>
                 <div class="clear">&nbsp;</div>
-
-                <!--  start account-content -->
-                <%-- <div class="account-content">
-                    <div class="account-drop-inner">
-                        <a href="" id="acc-settings">Settings</a>
-                        <div class="clear">&nbsp;</div>
-                        <div class="acc-line">&nbsp;</div>
-                        <a href="" id="acc-details">Personal details </a>
-                        <div class="clear">&nbsp;</div>
-                        <div class="acc-line">&nbsp;</div>
-                        <a href="" id="acc-project">Project details</a>
-                        <div class="clear">&nbsp;</div>
-                        <div class="acc-line">&nbsp;</div>
-                        <a href="" id="acc-inbox">Inbox</a>
-                        <div class="clear">&nbsp;</div>
-                        <div class="acc-line">&nbsp;</div>
-                        <a href="" id="acc-stats">Statistics</a>
-                    </div>
-                </div>--%>
-                <!--  end account-content -->
 
             </div>
             <!-- end nav-right -->
@@ -273,23 +161,7 @@
                     <div class="nav-divider">&nbsp;</div>
 
                     <ul class="select">
-                        <li><a href="/Statistics.aspx"><b>Statistics</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
-                    </ul>
-
-                    <div class="nav-divider">&nbsp;</div>
-
-                    <ul class="select">
-                        <li class="showhide-account"><a href="/Tickets.aspx"><b>Tickets</b><!--[if IE 7]><!--></a><!--<![endif]-->
-
-                            <%--                            <!--[if lte IE 6]><table><tr><td><![endif]-->
-                            <div class="select_sub">
-                                <ul class="sub">
-                                    <li><a href="#nogo">Active</a></li>
-                                    <li><a href="#nogo">Closed</a></li>
-                                </ul>
-                            </div>
-                            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-                            --%></li>
+                        <li class="showhide-account"><a><b>Tickets</b></a></li>
 
                     </ul>
 
@@ -316,19 +188,6 @@
         <div class="clear"></div>
         <!--  start nav-outer -->
     </div>
-    <!--  start nav-outer-repeat................................................... END -->
-
-    <%--    <div class="clear"></div>
-
-    <!-- start content-outer ........................................................................................................................START -->
-    <div id="content-outer">
-
-        <div class="clear">&nbsp;</div>
-    </div>
-    <!--  end content-outer........................................................END -->
-
-    <div class="clear">&nbsp;</div>--%>
-
 
     <form id="form1" runat="server">
         <div>

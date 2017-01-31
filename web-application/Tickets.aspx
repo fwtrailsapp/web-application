@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="css/tickets.css" rel="stylesheet" />
+    <link href="css/screen.css" rel="stylesheet" />
     <script type="text/javascript" src="js/ModalForm.js"></script>
     <script type="text/javascript" src="js/CommentModal.js"></script>
     <script type="text/javascript" src="js/CloseModal.js"></script>
@@ -55,19 +56,22 @@
             <div id="closeDialog" title="Warning">
             </div>
 
-            <!-- The Modal -->
+            <!-- The Image Modal -->
             <div id="myModal" class="modal">
 
                 <!-- The Close Button -->
                 <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
+                <div style="height: auto; width: 450px; margin: 0 auto;">
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+                </div>
 
                 <!-- Modal Caption (Image Text) -->
                 <div id="caption"></div>
             </div>
 
-            <%=ticketList %>
         </div>
+        <%=ticketList %>
+    </div>
 </asp:Content>
