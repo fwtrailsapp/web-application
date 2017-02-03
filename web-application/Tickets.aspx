@@ -57,7 +57,7 @@
             </div>
 
             <!-- The Image Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal" style="overflow:hidden;z-index:1000;">
 
                 <!-- The Close Button -->
                 <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>

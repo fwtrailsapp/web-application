@@ -145,7 +145,7 @@
 
 
             <!--  start nav -->
-            <div class="nav">
+            <div class="nav" style="z-index:1">
                 <div class="table">
                     <%-- Use class = "current" to show which tab is current --%>
                     <ul class="select">
@@ -161,8 +161,7 @@
                     <div class="nav-divider">&nbsp;</div>
 
                     <ul class="select">
-                        <li class="showhide-account"><a><b>Tickets</b></a></li>
-
+                        <li class="showhide-account"><a><b>Tickets</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
                     </ul>
 
                     <div class="clear">&nbsp;</div>
