@@ -240,7 +240,7 @@
     <Content Include="js\jquery\jquery.usermode.js" />
     <Content Include="js\jquery\ui.checkbox.js" />
     <Content Include="js\jquery\ui.core.js" />
-    <Content Include="js\ModalForm.js" />
+    <Content Include="js\CreateTicketDialog.js" />
     <Content Include="oldHtml\about.html" />
     <Content Include="css\style.css" />
     <Content Include="oldHtml\data-visualization.html" />

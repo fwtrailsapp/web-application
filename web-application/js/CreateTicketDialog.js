@@ -2,7 +2,7 @@
 $(document).ready(function ()
 {
 
-    $('#dialog').dialog({
+    $('#createTicketDialog').dialog({
         'buttons': {
             'Create': {
                 text: 'Create',
@@ -31,7 +31,7 @@ $(document).ready(function ()
     $('#btnCreateTicket').click(function (e)
     {
         e.preventDefault();
-        $("#dialog").dialog("open");
+        $("#createTicketDialog").dialog("open");
     });
 
 });

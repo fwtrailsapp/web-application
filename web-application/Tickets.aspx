@@ -1,13 +1,12 @@
 ﻿<%@ Page Title="Tickets" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Tickets.aspx.cs" Inherits="web_application.Tickets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="css/tickets.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <%--<link rel="stylesheet" href="/resources/demos/style.css">--%>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href="css/tickets.css" rel="stylesheet" />
-    <link href="css/screen.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/ModalForm.js"></script>
+    <script type="text/javascript" src="js/CreateTicketDialog.js"></script>
     <script type="text/javascript" src="js/CommentModal.js"></script>
     <script type="text/javascript" src="js/CloseModal.js"></script>
     <script type="text/javascript" src="js/ImageModal.js"></script>
@@ -28,13 +27,13 @@
         <div style="text-align: right;">
             <a href="" id="btnCreateTicket">Create a Ticket</a>
 
-            <div id="dialog" title="Create a Ticket">
+            <div id="createTicketDialog" title="Create a Ticket">
 
                 <p class="validateTips">All form fields are required.</p>
 
-                <form id="createTicketForm">
+                <div id="createTicketForm">
                     <label for="createTitle">Title</label>
-                    <input type="text" name="createTitle" id="createTitle" value="" class="text ui-widget-content ui-corner-all" maxlength="75">
+                    <input type="text" name="createTitle" id="createTitle" value="" class="text ui-widget-content ui-corner-all" maxlength="75"/>
                     <label for="createDesc">Description</label>
                     <textarea name="createDesc" id="createDesc" class="text ui-widget-content ui-corner-all" maxlength="150" style="height: 100px; width: 300px; resize: none;"></textarea>
                     <label for="createType">Type</label>
@@ -45,7 +44,7 @@
                         <option>Trash</option>
                         <option>Other</option>
                     </select>
-                </form>
+                </div>
             </div>
 
             <div id="commentDialog" title="Comment">

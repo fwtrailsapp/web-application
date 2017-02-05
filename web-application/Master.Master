@@ -18,13 +18,11 @@
     <!--  jquery core -->
     <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
 
-    <script src="js/PopupDialog.js" type="text/javascript"></script>
-
     <!--  checkbox styling script -->
     <script src="js/jquery/ui.core.js" type="text/javascript"></script>
     <script src="js/jquery/ui.checkbox.js" type="text/javascript"></script>
     <script src="js/jquery/jquery.bind.js" type="text/javascript"></script>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         $(function ()
         {
             $('input').checkBox();
@@ -35,40 +33,40 @@
                 return false;
             });
         });
-    </script>
+    </script>--%>
 
     <![if !IE 7]>
 
     <!--  styled select box script version 1 -->
     <script src="js/jquery/jquery.selectbox-0.5.js" type="text/javascript"></script>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         $(document).ready(function ()
         {
             $('.styledselect').selectbox({ inputClass: "selectbox_styled" });
         });
-    </script>
+    </script>--%>
 
 
     <![endif]>
 
     <!--  styled select box script version 2 -->
     <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         $(document).ready(function ()
         {
             $('.styledselect_form_1').selectbox({ inputClass: "styledselect_form_1" });
             $('.styledselect_form_2').selectbox({ inputClass: "styledselect_form_2" });
         });
-    </script>
+    </script>--%>
 
     <!--  styled select box script version 3 -->
     <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         $(document).ready(function ()
         {
             $('.styledselect_pages').selectbox({ inputClass: "styledselect_pages" });
         });
-    </script>
+    </script>--%>
 
     <!-- Custom jquery scripts -->
     <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
@@ -93,12 +91,12 @@
 
     <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
     <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         $(document).ready(function ()
         {
             $(document).pngFix();
         });
-    </script>
+    </script>--%>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

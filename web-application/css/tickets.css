@@ -159,7 +159,7 @@
 
 /* Create Ticket Dialog*/
 label {
-    display: block;
+    display: none;
     color: deepskyblue;
 }
 
