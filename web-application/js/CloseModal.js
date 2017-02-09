@@ -9,6 +9,21 @@
                 click: function ()
                 {
                     // Call Web API
+                    $.ajax({
+                        type: 'Post',
+                        contentType: "application/json; charset=utf-8",
+                        url: "http://23.97.29.252:50000/capstone/datarelay.svc/trails/api/1/ticket/close",  //method Name 
+                        data: JSON.stringify({ id: ticketId }),
+                        dataType: 'json',
+                        success: alert("success"), // callback above
+                        error: function (msg)
+                        {
+                            debugger;
+                            alert("error: " + msg.status);
+                        }
+                    });
+                    $(this).dialog("close");
+
                 }
             },
             'Cancel': {
@@ -27,7 +42,6 @@
 
     $('[id^=CloseButton]').click(function (e)
     {
-        debugger;
         ticketId = this.id.replace("CloseButton", "");
         document.getElementById("closeDialog").innerHTML = "Are you sure you want to close ticket #" + ticketId + "?";
         e.preventDefault();

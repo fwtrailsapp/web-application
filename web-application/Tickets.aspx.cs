@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace web_application
 {
@@ -35,7 +36,8 @@ namespace web_application
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string constr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LoginDB; Integrated Security = True";
+            //string constr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LoginDB; Integrated Security = True";
+            string constr = System.Configuration.ConfigurationManager.ConnectionStrings["GreenwayConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
 
             using (SqlCommand cmd = new SqlCommand())
