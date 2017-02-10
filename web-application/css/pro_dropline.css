@@ -9,7 +9,6 @@ way to fit your requirements.
 =================================================================== */
 
 .nav	{
-	background: #4f4f4f url(../images/shared/nav/pro_line_0.gif) repeat-x;
 	font-family:Tahoma;
 	font-size: 14px;
 	height: 29px;
@@ -38,7 +37,6 @@ way to fit your requirements.
 	padding: 0;
 	}
 .nav .select a	{
-	background: url(../images/shared/nav/pro_line_0.gif);
 	color: #fff;
 	display: block;
 	float: left;

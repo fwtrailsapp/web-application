@@ -12,8 +12,8 @@ namespace User_Login_CS
         protected void ValidateUser(object sender, EventArgs e)
         {
             int userId = 0;
-            //string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-            string constr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LoginDB; Integrated Security = True";
+            string constr = ConfigurationManager.ConnectionStrings["GreenwayConnection"].ConnectionString;
+            //string constr = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LoginDB; Integrated Security = True";
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("Validate_User"))

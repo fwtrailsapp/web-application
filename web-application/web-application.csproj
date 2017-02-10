@@ -115,7 +115,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\datePicker.css" />
     <Content Include="css\pro_dropline.css" />
     <Content Include="css\pro_dropline_ie.css" />
     <Content Include="css\screen.css" />
@@ -148,11 +147,9 @@
     <Content Include="images\forms\step_light_left.gif" />
     <Content Include="images\forms\step_light_right.gif" />
     <Content Include="images\forms\step_light_round.gif" />
-    <Content Include="images\forms\upload_file.gif" />
     <Content Include="images\login\icon_back_login.gif" />
     <Content Include="images\login\inp_login.gif" />
     <Content Include="images\login\loginbox_bg.png" />
-    <Content Include="images\login\login_bg.jpg" />
     <Content Include="images\login\submit_login.gif" />
     <Content Include="images\shared\blank.gif" />
     <Content Include="images\shared\border_bit.jpg" />
@@ -183,7 +180,6 @@
     <Content Include="images\shared\nav\pro_line_0x.gif" />
     <Content Include="images\shared\nav\pro_line_1.gif" />
     <Content Include="images\shared\nav\pro_line_2.gif" />
-    <Content Include="images\shared\nav\repeat.jpg" />
     <Content Include="images\shared\side_shadowleft.jpg" />
     <Content Include="images\shared\side_shadowright.jpg" />
     <Content Include="images\shared\top_bg.jpg" />
@@ -256,15 +252,9 @@
     <Content Include="scripts\jquery-3.1.1.slim.js" />
     <Content Include="scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="SQL\LoginDB.sql" />
-    <Content Include="newUser.aspx" />
     <Content Include="packages.config" />
     <Content Include="README.md" />
     <Content Include="Master.Master" />
-    <Content Include="images\forms\Thumbs.db" />
-    <Content Include="images\login\Thumbs.db" />
-    <Content Include="images\shared\nav\Thumbs.db" />
-    <Content Include="images\shared\Thumbs.db" />
-    <Content Include="images\table\Thumbs.db" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
     <Content Include="scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="scripts\jquery-3.1.1.min.map" />
@@ -321,13 +311,6 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="newUser.aspx.cs">
-      <DependentUpon>newUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="newUser.aspx.designer.cs">
-      <DependentUpon>newUser.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistics.aspx.cs">
       <DependentUpon>Statistics.aspx</DependentUpon>
@@ -360,7 +343,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="html\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

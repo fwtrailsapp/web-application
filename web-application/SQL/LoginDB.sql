@@ -8,21 +8,21 @@ GO
 USE [LoginDB]
 GO
 
-/****** Object:  Table [dbo].[Users]    Script Date: 01/03/2014 16:36:00 ******/
+/****** Object:  Table [dbo].[PortalUsers]    Script Date: 01/03/2014 16:36:00 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Users](
+CREATE TABLE [dbo].[PortalUsers](
 	[UserId] [int] IDENTITY(1,1) NOT NULL,
 	[Username] [nvarchar](20) NOT NULL,
 	[Password] [nvarchar](20) NOT NULL,
 	[Email] [nvarchar](30) NOT NULL,
 	[CreatedDate] [datetime] NOT NULL,
 	[LastLoginDate] [datetime] NULL,
- CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_PortalUsers] PRIMARY KEY CLUSTERED 
 (
 	[UserId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -48,17 +48,17 @@ CREATE PROCEDURE [dbo].[Insert_User]
 AS
 BEGIN
 	SET NOCOUNT ON;
-	IF EXISTS(SELECT UserId FROM Users WHERE Username = @Username)
+	IF EXISTS(SELECT UserId FROM PortalUsers WHERE Username = @Username)
 	BEGIN
 		SELECT -1 -- Username exists.
 	END
-	ELSE IF EXISTS(SELECT UserId FROM Users WHERE Email = @Email)
+	ELSE IF EXISTS(SELECT UserId FROM PortalUsers WHERE Email = @Email)
 	BEGIN
 		SELECT -2 -- Email exists.
 	END
 	ELSE
 	BEGIN
-		INSERT INTO [Users]
+		INSERT INTO [PortalUsers]
 			   ([Username]
 			   ,[Password]
 			   ,[Email]
@@ -101,13 +101,13 @@ BEGIN
 	DECLARE @UserId INT, @LastLoginDate DATETIME
 	
 	SELECT @UserId = UserId, @LastLoginDate = LastLoginDate 
-	FROM Users WHERE Username = @Username AND [Password] = @Password
+	FROM PortalUsers WHERE Username = @Username AND [Password] = @Password
 	
 	IF @UserId IS NOT NULL
 	BEGIN
 		IF NOT EXISTS(SELECT UserId FROM UserActivation WHERE UserId = @UserId)
 		BEGIN
-			UPDATE Users
+			UPDATE PortalUsers
 			SET LastLoginDate =  GETDATE()
 			WHERE UserId = @UserId
 			SELECT @UserId [UserId] -- User Valid
@@ -123,7 +123,7 @@ BEGIN
 	END
 END
 GO
-INSERT INTO Users
+INSERT INTO PortalUsers
 SELECT 'Mudassar', '12345', 'mudassar@aspsnippets.com', GETDATE(), NULL
 UNION ALL
 SELECT 'Ram', '12345', 'ram@aspsnippets.com', GETDATE(), NULL
