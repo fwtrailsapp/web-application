@@ -147,9 +147,16 @@
     <Content Include="images\forms\step_light_left.gif" />
     <Content Include="images\forms\step_light_right.gif" />
     <Content Include="images\forms\step_light_round.gif" />
+    <Content Include="images\login\bg_blue.jpg" />
+    <Content Include="images\login\green_loginbox_bg.png" />
+    <Content Include="images\login\icon_back_login - Copy.gif" />
     <Content Include="images\login\icon_back_login.gif" />
+    <Content Include="images\login\inp_login - Copy.gif" />
     <Content Include="images\login\inp_login.gif" />
+    <Content Include="images\login\loginbox_bg - Copy.png" />
     <Content Include="images\login\loginbox_bg.png" />
+    <Content Include="images\login\login_bg - Copy.jpg" />
+    <Content Include="images\login\submit_login - Copy.gif" />
     <Content Include="images\login\submit_login.gif" />
     <Content Include="images\shared\blank.gif" />
     <Content Include="images\shared\border_bit.jpg" />
@@ -177,6 +184,7 @@
     <Content Include="images\shared\nav\icon_acc_stats.gif" />
     <Content Include="images\shared\nav\nav_logout.gif" />
     <Content Include="images\shared\nav\nav_myaccount.gif" />
+    <Content Include="images\shared\nav\new_repeat.jpg" />
     <Content Include="images\shared\nav\pro_line_0x.gif" />
     <Content Include="images\shared\nav\pro_line_1.gif" />
     <Content Include="images\shared\nav\pro_line_2.gif" />
