@@ -8,7 +8,7 @@
                 click: function () {
                     // Call Web API
                     $.ajax({
-                        type: 'Post',
+                        type: 'Get',
                         crossDomain: true,
                         beforeSend: function (request) {
                             request.setRequestHeader("Trails-Api-Key", ab83920bdc826bdaf);
