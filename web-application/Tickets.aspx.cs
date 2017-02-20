@@ -15,18 +15,19 @@ namespace web_application
     {
         public string ticketList;
         public string id = "-1";
+        public string notes;
         string type = "Unknown";
         string desc = "No Description.";
         string buttonId = "";
         string imgId = "";
-        string gps;
+        string latitude;
+        string longitude;
         string gpsId = "";
         string gpsLink = "";
         string active = "ACTIVE";
         string title = "No Title";
         string date = "Unknown";
         string username = "unknown";
-        public string notes;
         string typeColor = "blue";
         string commentId = "";
 
@@ -63,12 +64,13 @@ namespace web_application
                                 id = reader.GetValue(i).ToString();
                                 type = reader.GetValue(i + 1).ToString();
                                 desc = reader.GetValue(i + 2).ToString();
-                                gps = title = reader.GetValue(i + 5).ToString();
-                                title = reader.GetValue(i + 6).ToString();
-                                date = reader.GetValue(i + 7).ToString();
-                                username = reader.GetValue(i + 8).ToString();
-                                notes = reader.GetValue(i + 9).ToString();
-                                typeColor = reader.GetValue(i + 10).ToString();
+                                latitude = title = reader.GetValue(i + 5).ToString();
+                                longitude = title = reader.GetValue(i + 6).ToString();
+                                title = reader.GetValue(i + 7).ToString();
+                                date = reader.GetValue(i + 8).ToString();
+                                username = reader.GetValue(i + 9).ToString();
+                                notes = reader.GetValue(i + 10).ToString();
+                                typeColor = reader.GetValue(i + 11).ToString();
 
                                 //Remove spaces
                                 typeColor = typeColor.Replace(" ", "");
@@ -77,7 +79,7 @@ namespace web_application
                                 commentId = "CommentButton" + id;
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
-                                gpsLink = "https://www.google.com/maps/place/" + gps;
+                                gpsLink = "https://www.google.com/maps/place/" + longitude + " " + latitude;
                                 ticketList = string.Concat(ticketList,
                                    $"<div id=\"ticketDiv\">"
                                        + "<table style=\"width:100%; height:95%;border-collapse: separate !important;\">"

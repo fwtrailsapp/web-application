@@ -16,6 +16,8 @@ namespace web_application
         string type = "Unknown";
         string desc = "No Description.";
         string active = "ACTIVE";
+        string latitude;
+        string longitude;
         string title = "No Title";
         string date = "Unknown";
         string username = "unknown";
@@ -55,12 +57,13 @@ namespace web_application
                                 id = reader.GetValue(i).ToString();
                                 type = reader.GetValue(i + 1).ToString();
                                 desc = reader.GetValue(i + 2).ToString();
-                                title = reader.GetValue(i + 6).ToString();
-                                date = reader.GetValue(i + 7).ToString();
-                                username = reader.GetValue(i + 8).ToString();
-                                notes = reader.GetValue(i + 9).ToString();
-                                typeColor = reader.GetValue(i + 10).ToString();
-                                dateClosed = reader.GetValue(i + 11).ToString();
+                                latitude = title = reader.GetValue(i + 5).ToString();
+                                longitude = title = reader.GetValue(i + 6).ToString();
+                                title = reader.GetValue(i + 7).ToString();
+                                date = reader.GetValue(i + 8).ToString();
+                                username = reader.GetValue(i + 9).ToString();
+                                notes = reader.GetValue(i + 10).ToString();
+                                typeColor = reader.GetValue(i + 11).ToString();
 
                                 //Remove spaces for the color
                                 typeColor = typeColor.Replace(" ", "");
