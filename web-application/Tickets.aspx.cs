@@ -64,8 +64,8 @@ namespace web_application
                                 id = reader.GetValue(i).ToString();
                                 type = reader.GetValue(i + 1).ToString();
                                 desc = reader.GetValue(i + 2).ToString();
-                                latitude = title = reader.GetValue(i + 5).ToString();
-                                longitude = title = reader.GetValue(i + 6).ToString();
+                                latitude = reader.GetValue(i + 5).ToString();
+                                longitude = reader.GetValue(i + 6).ToString();
                                 title = reader.GetValue(i + 7).ToString();
                                 date = reader.GetValue(i + 8).ToString();
                                 username = reader.GetValue(i + 9).ToString();

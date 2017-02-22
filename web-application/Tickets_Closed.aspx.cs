@@ -16,14 +16,18 @@ namespace web_application
         string type = "Unknown";
         string desc = "No Description.";
         string active = "ACTIVE";
-        string latitude;
-        string longitude;
         string title = "No Title";
         string date = "Unknown";
         string username = "unknown";
         string notes = "";
         string typeColor = "blue";
         string dateClosed = "unknown";
+        string imgId = "";
+        string latitude;
+        string longitude;
+        string gpsId = "";
+        string gpsLink = "";
+        string commentId = "";
 
         int rowNumber = 0;
 
@@ -57,8 +61,8 @@ namespace web_application
                                 id = reader.GetValue(i).ToString();
                                 type = reader.GetValue(i + 1).ToString();
                                 desc = reader.GetValue(i + 2).ToString();
-                                latitude = title = reader.GetValue(i + 5).ToString();
-                                longitude = title = reader.GetValue(i + 6).ToString();
+                                latitude = reader.GetValue(i + 5).ToString();
+                                longitude = reader.GetValue(i + 6).ToString();
                                 title = reader.GetValue(i + 7).ToString();
                                 date = reader.GetValue(i + 8).ToString();
                                 username = reader.GetValue(i + 9).ToString();
@@ -67,6 +71,11 @@ namespace web_application
 
                                 //Remove spaces for the color
                                 typeColor = typeColor.Replace(" ", "");
+
+                                commentId = "CommentButton" + id;
+                                imgId = "Image" + id;
+                                gpsId = "GPS" + id;
+                                gpsLink = "https://www.google.com/maps/place/" + longitude + " " + latitude;
 
                                 closedTicketList = string.Concat(closedTicketList,
                                    $"<div id=\"ticketDiv\">"
@@ -87,13 +96,13 @@ namespace web_application
                                            + "<tr style=\"width:150px\">"
                                                + $"<td class=\"bottom-left-ticket-border\">"
                                                     + "<div style=\"float:left;overflow:hidden;width:28%;border-right:1px solid black;text-align:center;padding-right:10px;\">"
-                                                        + "<a href=\"\"> <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></a>"
+                                                        + $"<a href=\"\" id=\"{imgId}\"> <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                     + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
-                                                        + "<a href=\"\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></a>"
+                                                        + $"<a href=\"{gpsLink}\" target=\"popup\" onclick=\"window.open('{gpsLink}','popup','width=600,height=600','left=50%'); return false;\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                     + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
-                                                        + "<a href=\"\"> <i class=\"fa fa-comment\" aria-hidden=\"true\"></i></a>"
+                                                        + $"<a href=\"\" id=\"{commentId}\"> <i class=\"fa fa-comment\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                + "</td>"
                                                + $"<td class=\"bottom-center-ticket-border\" style=\"text-align:center;\">Submitted: {date}</td>"

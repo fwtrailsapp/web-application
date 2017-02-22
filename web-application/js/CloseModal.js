@@ -9,25 +9,14 @@
                     // Call Web API
                     $.ajax({
                         type: 'POST',
-                        crossDomain: true,
                         contentType: "application/json; charset=utf-8",
                         url: "http://23.97.29.252:50000/capstone/datarelay.svc/trails/api/1/ticket/close",  //method Name 
                         data: JSON.stringify({ id: ticketId }),
                         dataType: 'json',
-                        //success: alert("success"), // callback above
-                        //error: function (msg) {
-                        //    debugger;
-                        //    alert("error: " + msg.status);
-                        //}
                     });
 
-                    //$.post('http://23.97.29.252:50000/capstone/datarelay.svc/trails/api/1/ticket/close', { id: ticketId },
-                    //    function (returnedData) {
-                    //        console.log(returnedData);
-                    //    });
-
                     $(this).dialog("close");
-
+                    location.reload();
                 }
             },
             'Cancel': {
