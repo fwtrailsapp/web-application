@@ -6,6 +6,9 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://use.fontawesome.com/4193f3e666.js"></script>
+
+    <script type="text/javascript" src="js/CommentModal.js"></script>
+    <%-- Need this for some reason for the comment popup to work on this page. --%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
 
@@ -17,7 +20,7 @@
 
     <!-- end page-heading -->
 
-    <div id="clsoedTicketList" style="background-color: #D3D9DF; height: 100%; width: 850px; margin: 0 auto;">
+    <div id="closedTicketList" style="background-color: #D3D9DF; height: 100%; width: 850px; margin: 0 auto;">
         <%=closedTicketList %>
     </div>
 
