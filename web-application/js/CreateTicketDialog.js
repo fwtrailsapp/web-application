@@ -55,16 +55,16 @@ $(document).ready(function () {
                             latitude: 0,
                             longitude: 0,
                             title: $('#createTitle').val(),
-                            date: currentDateTime,
+                            date: "2017-02-22",
                             username: "admin",
                             notes: "",
-                            dateClosed: "NULL"
+                            dateClosed: "2018-10-13"
                         }),
                         dataType: 'json',
                     });
 
                     $(this).dialog("close");
-                    location.reload();
+                   // location.reload();
                 }
             }
         },

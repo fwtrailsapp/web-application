@@ -6,13 +6,19 @@
 <head runat="server">
     <title></title>
     <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />--%>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Custom jquery scripts -->
+    <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 
-    <!-- Custom jquery scripts -->
-    <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/CommentModal.js"></script>
+    <script type="text/javascript" src="js/ImageModal.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -59,17 +65,17 @@
 
 
             <!--  start nav -->
-            <div class="nav" style="z-index:1">
+            <div class="nav" style="z-index: 1">
                 <div class="table">
                     <%-- Use class = "current" to show which tab is current --%>
                     <ul class="select">
-                        <li><a href="/Default.aspx"><b>Dashboard</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+                        <li><a href="/webapp/Default.aspx"><b>Dashboard</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
                     </ul>
 
                     <div class="nav-divider">&nbsp;</div>
 
                     <ul class="select">
-                        <li><a href="/HeatMap.aspx"><b>Heat Map</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+                        <li><a href="/webapp/HeatMap.aspx"><b>Heat Map</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
                     </ul>
 
                     <div class="nav-divider">&nbsp;</div>
@@ -109,6 +115,28 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+    <div id="commentDialog" title="Comment">
+        <textarea id="commentTextArea" style="resize: none" rows="8" cols="42" disabled="disabled"></textarea>
+    </div>
+
+    <div id="closeDialog" title="Warning">
+    </div>
+
+    <!-- The Image Modal -->
+    <div id="myModal" class="modal" style="overflow: hidden; z-index: 1000;">
+
+        <!-- The Close Button -->
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+        <div style="height: auto; width: 450px; margin: 0 auto;">
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+        </div>
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
 
     <!-- start footer -->
     <div id="footer">
