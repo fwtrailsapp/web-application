@@ -75,7 +75,7 @@ namespace web_application
                                 commentId = "CommentButton" + id;
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
-                                gpsLink = "https://www.google.com/maps/place/" + longitude + " " + latitude;
+                                gpsLink = "https://www.google.com/maps/place/" + latitude + "," + longitude;
 
                                 closedTicketList = string.Concat(closedTicketList,
                                    $"<div id=\"ticketDiv\">"
