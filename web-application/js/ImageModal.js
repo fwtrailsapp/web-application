@@ -1,6 +1,6 @@
-﻿$(document).ready(function ()
-{
-
+﻿$(document).ready(function () {
+    var ticketId;
+    var imgRes;
     // Get the modal
     var modal = document.getElementById('myModal');
 
@@ -8,12 +8,29 @@
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
 
-    $('[id^=Image]').click(function (e)
-    {
-        debugger;
+    $('[id^=Image]').click(function (e) {
         e.preventDefault();
+        ticketId = this.id.replace("Image", "");
+
+        // Call Web API
+        $.ajax({
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            url: "http://23.97.29.252/capstone/datarelay.svc/trails/api/1/retrieve/image",  //method Name 
+            data: { id: ticketId },
+            dataType: 'json',
+            complete: function (res) {
+                imgRes = res.responseJSON;
+                imgRes = imgRes.replace(/\\/g, "/");
+                imgRes = imgRes.replace('C:', '../..');
+
+                console.log("Image get result: " + res.responseJSON);
+            }
+        });
+
         modal.style.display = "block";
-        modalImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg";
+        debugger;
+        modalImg.src = imgRes;
         captionText.innerHTML = this.alt;
     });
 
@@ -21,8 +38,7 @@
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function ()
-    {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 

@@ -123,6 +123,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppPoolInfo.aspx" />
     <Content Include="css\pro_dropline.css" />
     <Content Include="css\pro_dropline_ie.css" />
     <Content Include="css\screen.css" />
@@ -268,6 +269,7 @@
     <Content Include="scripts\jquery-3.1.1.min.js" />
     <Content Include="scripts\jquery-3.1.1.slim.js" />
     <Content Include="scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="serverInfo.aspx" />
     <Content Include="SQL\LoginDB.sql" />
     <Content Include="packages.config" />
     <Content Include="README.md" />
@@ -300,6 +302,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppPoolInfo.aspx.cs">
+      <DependentUpon>AppPoolInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppPoolInfo.aspx.designer.cs">
+      <DependentUpon>AppPoolInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,6 +338,13 @@
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="serverInfo.aspx.cs">
+      <DependentUpon>serverInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="serverInfo.aspx.designer.cs">
+      <DependentUpon>serverInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Statistics.aspx.cs">
       <DependentUpon>Statistics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
