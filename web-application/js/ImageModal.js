@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
     var ticketId;
     var imgRes;
+    var imgName;
+
     // Get the modal
     var modal = document.getElementById('myModal');
 
@@ -20,18 +22,23 @@
             data: { id: ticketId },
             dataType: 'json',
             complete: function (res) {
-                imgRes = res.responseJSON;
-                imgRes = imgRes.replace(/\\/g, "/");
-                imgRes = imgRes.replace('C:', '../..');
+                if (res.responseJSON || res.responseJSON.length !== 0) {
+                    imgRes = res.responseJSON;
+                    imgRes = imgRes.split('\\');
+                    imgName = imgRes.pop();
+                } else {
+                    imgName = "noImg.jpg";
+                }
 
-                console.log("Image get result: " + res.responseJSON);
+                console.log("Image get result: " + imgName);
+                modal.style.display = "block";
+                debugger;
+                modalImg.src = "http://23.97.29.252/webapp/images/" + imgName;
+                captionText.innerHTML = this.alt;
             }
         });
 
-        modal.style.display = "block";
-        debugger;
-        modalImg.src = imgRes;
-        captionText.innerHTML = this.alt;
+
     });
 
     // Get the <span> element that closes the modal
