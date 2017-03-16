@@ -80,6 +80,7 @@ namespace web_application
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
                                 gpsLink = "https://www.google.com/maps/place/" + latitude + "," + longitude;
+                                //Response.Write(gpsLink);
                                 ticketList = string.Concat(ticketList,
                                    $"<div id=\"ticketDiv\">"
                                        + "<table style=\"width:100%; height:95%;border-collapse: separate !important;\">"

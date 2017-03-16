@@ -2,6 +2,9 @@
 $(document).ready(function () {
 
     var date = new Date();
+
+    var currDate = date.toISOString();
+
     var month = date.getMonth() + 1;
     var day = date.getDate();
     var year = date.getFullYear();
@@ -26,8 +29,8 @@ $(document).ready(function () {
     if (!isAM) {
         timeOfDay = "PM";
     }
-
-    currentDateTime = month + "/" + day + "/" + year + " " + hour + ":" + minute + ":" + second + " " + timeOfDay;
+    debugger;
+    currentDateTime = year + "-" + month + "-" + day + "'T'" + hour + ":" + minute + ":" + second;
 
     $('#createTicketDialog').dialog({
         'buttons': {
@@ -55,10 +58,10 @@ $(document).ready(function () {
                             latitude: 0,
                             longitude: 0,
                             title: $('#createTitle').val(),
-                            date: "2017-02-22",
+                            date: currDate,
                             username: "admin",
                             notes: "",
-                            dateClosed: "2018-10-13"
+                            dateClosed: ""
                         }),
                         dataType: 'json',
                     });
