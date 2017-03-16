@@ -74,9 +74,9 @@
 
                     <div class="nav-divider">&nbsp;</div>
 
-                    <ul class="select">
+<%--                    <ul class="select">
                         <li><a href="/webapp/HeatMap.aspx"><b>Heat Map</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
-                    </ul>
+                    </ul>--%>
 
                     <div class="nav-divider">&nbsp;</div>
 

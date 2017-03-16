@@ -254,6 +254,8 @@
     <Content Include="js\jquery\ui.checkbox.js" />
     <Content Include="js\jquery\ui.core.js" />
     <Content Include="js\CreateTicketDialog.js" />
+    <Content Include="Login_Old.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="oldHtml\about.html" />
     <Content Include="css\style.css" />
     <Content Include="oldHtml\data-visualization.html" />
@@ -262,7 +264,6 @@
     <Content Include="oldHtml\HtmlPage1.html" />
     <Content Include="js\loginSuccess.js" />
     <Content Include="js\prefixfree.min.js" />
-    <Content Include="Login.aspx" />
     <None Include="Properties\PublishProfiles\Justin Laptop.pubxml" />
     <None Include="Properties\PublishProfiles\Justin.pubxml" />
     <None Include="scripts\jquery-3.1.1.intellisense.js" />
@@ -323,6 +324,12 @@
     </Compile>
     <Compile Include="HeatMap.aspx.designer.cs">
       <DependentUpon>HeatMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Old.aspx.cs">
+      <DependentUpon>Login_Old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Old.aspx.designer.cs">
+      <DependentUpon>Login_Old.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

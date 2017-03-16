@@ -616,17 +616,13 @@ div.selectbox-wrapper3 ul li {
 
 /*  LOGIN -------------------------------------------------------------------------------- */
 
-#login-bg {
-    background: url(../images/login/bg_blue.jpg) no-repeat top center;
-}
-
 #login-holder {
     margin: 0px auto 0 auto;
     width: 508px;
 }
 
 #loginbox {
-    background: url(../images/login/green_loginbox_bg.png) no-repeat;
+    background: url(../images/login/loginbox_bg.png) no-repeat;
     font-size: 12px;
     height: 212px;
     line-height: 12px;
