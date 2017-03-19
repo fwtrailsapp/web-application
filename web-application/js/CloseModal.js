@@ -16,7 +16,7 @@
                     });
 
                     $(this).dialog("close");
-                    //location.reload();
+                    location.reload();
                 }
             },
             'Cancel': {

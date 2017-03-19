@@ -40,10 +40,12 @@
             <textarea name="createDesc" id="createDesc" class="text ui-widget-content ui-corner-all" maxlength="150" style="height: 100px; width: 300px; resize: none;"></textarea>
             <label for="createType">Type</label>
             <select name="createType" id="createType" class="text ui-widget-content ui-corner-all">
-                <option>Water</option>
+                <option>High Water</option>
                 <option>Pothole</option>
-                <option>Tree</option>
-                <option>Trash</option>
+                <option>Tree/Branch</option>
+                <option>Trash Full</option>
+                <option>Litter</option>
+                <option>Overgrown Brush</option>
                 <option>Other</option>
             </select>
         </div>

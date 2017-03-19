@@ -88,7 +88,7 @@ namespace web_application
                                            + "<tr>"
                                                + $"<td id=\"r2c1\" style=\"background-color: red;\"><b>CLOSED</b></td>"
                                                + $"<td id=\"r2c2\" rowspan=\"2\" colspan=\"2\">{desc}</td>"
-                                               + $"<td style=\"width:150px;text-align:center;\" rowspan=\"2\">Closed: <b>{dateClosed}</b></td>"
+                                               + $"<td id=\"closedDateField{id}\" style=\"width:150px;text-align:center;\" rowspan=\"2\">Closed: <b>{dateClosed}</b></td>"
                                            + "</tr>"
                                            + "<tr id=\"r3c1\">"
                                                + $"<td> </td>"

@@ -2,9 +2,6 @@
 $(document).ready(function () {
 
     var date = new Date();
-
-    var currDate = date.toISOString();
-
     var month = date.getMonth() + 1;
     var day = date.getDate();
     var year = date.getFullYear();
@@ -20,17 +17,30 @@ $(document).ready(function () {
         hour -= 12;
         isAM = false;
     }
-
     if (date.getHours() == 0) {
         hour = 12;
         isAM = true; //just to be sure
     }
-
     if (!isAM) {
         timeOfDay = "PM";
     }
-    debugger;
-    currentDateTime = year + "-" + month + "-" + day + "'T'" + hour + ":" + minute + ":" + second;
+    if (month < 10) {
+        month = "0" + month;
+    }
+    if (day < 10) {
+        day = "0" + day;
+    }
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+    if (minute < 10) {
+        minute = "0" + minute;
+    }
+    if (second < 10) {
+        second = "0" + second;
+    }
+
+    currentDateTime = year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second;
 
     $('#createTicketDialog').dialog({
         'buttons': {
@@ -58,16 +68,16 @@ $(document).ready(function () {
                             latitude: 0,
                             longitude: 0,
                             title: $('#createTitle').val(),
-                            date: currDate,
+                            date: currentDateTime,
                             username: "admin",
                             notes: "",
-                            dateClosed: ""
+                            dateClosed: currentDateTime
                         }),
                         dataType: 'json',
                     });
 
                     $(this).dialog("close");
-                   // location.reload();
+                    location.reload();
                 }
             }
         },
