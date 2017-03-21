@@ -1,5 +1,6 @@
 ﻿
-$(document).ready(function () {
+$(document).ready(function ()
+{
 
     var date = new Date();
     var month = date.getMonth() + 1;
@@ -13,30 +14,38 @@ $(document).ready(function () {
 
     var isAM = true;
 
-    if (date.getHours() >= 12) {
+    if (date.getHours() >= 12)
+    {
         hour -= 12;
         isAM = false;
     }
-    if (date.getHours() == 0) {
+    if (date.getHours() == 0)
+    {
         hour = 12;
         isAM = true; //just to be sure
     }
-    if (!isAM) {
+    if (!isAM)
+    {
         timeOfDay = "PM";
     }
-    if (month < 10) {
+    if (month < 10)
+    {
         month = "0" + month;
     }
-    if (day < 10) {
+    if (day < 10)
+    {
         day = "0" + day;
     }
-    if (hour < 10) {
+    if (hour < 10)
+    {
         hour = "0" + hour;
     }
-    if (minute < 10) {
+    if (minute < 10)
+    {
         minute = "0" + minute;
     }
-    if (second < 10) {
+    if (second < 10)
+    {
         second = "0" + second;
     }
 
@@ -46,7 +55,8 @@ $(document).ready(function () {
         'buttons': {
             'Cancel': {
                 text: 'Cancel',
-                click: function () {
+                click: function ()
+                {
                     $('#createTitle').val("");
                     $('#createDesc').val("");
                     $(this).dialog("close");
@@ -54,7 +64,8 @@ $(document).ready(function () {
             },
             'Create': {
                 text: 'Create',
-                click: function () {
+                click: function ()
+                {
                     // Call Web API
                     $.ajax({
                         type: 'POST',
@@ -74,10 +85,13 @@ $(document).ready(function () {
                             dateClosed: currentDateTime
                         }),
                         dataType: 'json',
+                        complete: function ()
+                        {
+                            $("#createTicketDialog").dialog("close");
+                            location.reload();
+                            window.location.href = window.location.href + '?refresh';
+                        }
                     });
-
-                    $(this).dialog("close");
-                    location.reload();
                 }
             }
         },
@@ -87,7 +101,8 @@ $(document).ready(function () {
         modal: true
     });
 
-    $('#btnCreateTicket').click(function (e) {
+    $('#btnCreateTicket').click(function (e)
+    {
         e.preventDefault();
         $("#createTicketDialog").dialog("open");
     });

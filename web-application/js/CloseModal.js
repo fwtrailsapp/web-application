@@ -1,11 +1,13 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function ()
+{
     var ticketId;
 
     $('#closeDialog').dialog({
         'buttons': {
             'Close': {
                 text: 'Close',
-                click: function () {
+                click: function ()
+                {
                     // Call Web API
                     $.ajax({
                         type: 'POST',
@@ -13,15 +15,21 @@
                         url: "http://23.97.29.252:50000/capstone/datarelay.svc/trails/api/1/ticket/close",  //method Name 
                         data: JSON.stringify({ id: ticketId }),
                         dataType: 'json',
+                        complete: function ()
+                        {
+                            $("#closeDialog").dialog("close");
+                            location.reload();
+                            window.location.href = window.location.href + '?refresh';
+                        }
                     });
+                    debugger;
 
-                    $(this).dialog("close");
-                    location.reload();
                 }
             },
             'Cancel': {
                 text: 'Cancel',
-                click: function () {
+                click: function ()
+                {
                     $(this).dialog("close");
                 }
             },
@@ -32,7 +40,8 @@
         modal: true
     });
 
-    $('[id^=CloseButton]').click(function (e) {
+    $('[id^=CloseButton]').click(function (e)
+    {
         ticketId = this.id.replace("CloseButton", "");
         document.getElementById("closeDialog").innerHTML = "Are you sure you want to close ticket #" + ticketId + "?";
         e.preventDefault();
