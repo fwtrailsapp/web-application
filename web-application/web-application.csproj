@@ -234,6 +234,8 @@
     <Content Include="images\table\table_icon_4.gif" />
     <Content Include="images\table\table_icon_5.gif" />
     <Content Include="images\table\table_sort_arrow.gif" />
+    <Content Include="js\AccountStats.js" />
+    <Content Include="js\ActivityStats.js" />
     <Content Include="js\CloseModal.js" />
     <Content Include="js\CommentModal.js" />
     <Content Include="js\ImageModal.js" />
@@ -254,6 +256,7 @@
     <Content Include="js\jquery\ui.checkbox.js" />
     <Content Include="js\jquery\ui.core.js" />
     <Content Include="js\CreateTicketDialog.js" />
+    <Content Include="js\TicketStats.js" />
     <Content Include="Login_Old.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="oldHtml\about.html" />
@@ -267,6 +270,8 @@
     <None Include="Properties\PublishProfiles\Justin Laptop.pubxml" />
     <None Include="Properties\PublishProfiles\Justin.pubxml" />
     <None Include="scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="scripts\Chart.js" />
+    <Content Include="scripts\Chart.min.js" />
     <Content Include="scripts\jquery-3.1.1.js" />
     <Content Include="scripts\jquery-3.1.1.min.js" />
     <Content Include="scripts\jquery-3.1.1.slim.js" />
