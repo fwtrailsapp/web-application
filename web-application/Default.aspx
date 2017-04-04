@@ -25,7 +25,8 @@
             // parameter when you first load the API. For example:
             //<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
-            var map, heatmap;
+            var map, heatmap; 
+            var pathUrl = "23.97.29.252:50000/Capstone/datarelay.svc/trails/api/1/Path/All";
             function initMap() {
                 // create the map object
                 map = new google.maps.Map(document.getElementById('map'),
@@ -46,6 +47,8 @@
                     url: 'https://gist.githubusercontent.com/scottyseus/ec2e4892d5f53920390e/raw/47128a99e128ba78ea8b5d7b476544766b0e5f5c/overlay.kml',
                     map: map
                 });
+
+                getPaths();
             }
             function toggleHeatmap() {
                 heatmap.setMap(heatmap.getMap() ? null : map);
@@ -76,6 +79,74 @@
             function changeOpacity() {
                 heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
             }
+
+            function getPaths() {
+                $.ajax({
+                    type: 'GET',
+                    contentType: "application/json' charset=utf-8",
+                    url: "http://23.97.29.252:50000/Capstone/datarelay.svc/trails/api/1/Path/All",
+                    data: {},
+                    datatype: 'json',
+                    complete: function (res) {
+                        var paths = res.responseJSON;
+
+                        displayPaths(paths);
+                    }
+
+                })
+            }
+
+            function displayPaths(paths) {
+                var points = [];
+                for (index in paths) {
+                    points = points.concat(parsePath(paths[index]['path']));
+                }
+
+                // heatmap layer
+                heatmap = new google.maps.visualization.HeatmapLayer({
+                    data: points,
+                    map: map
+                });
+
+                var gradient = [
+                    'rgba(0, 255, 255, 0)',
+                    'rgba(0, 255, 255, 1)',
+                    'rgba(0, 191, 255, 1)',
+                    'rgba(0, 127, 255, 1)',
+                    'rgba(0, 63, 255, 1)',
+                    'rgba(0, 0, 255, 1)',
+                    'rgba(0, 0, 223, 1)',
+                    'rgba(0, 0, 191, 1)',
+                    'rgba(0, 0, 159, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(63, 0, 91, 1)',
+                    'rgba(127, 0, 63, 1)',
+                    'rgba(191, 0, 31, 1)',
+                    'rgba(255, 0, 0, 1)'
+                ]
+
+                heatmap.set('gradient', gradient);
+                heatmap.set('opacity', 1);
+                heatmap.set('radius', 50);
+            }
+
+            function parsePath(path) {
+                var points = [];
+                var coords = path.split(/[ ,]+/);
+                for (i = 0; i < coords.length; i++) {
+                    var lat = coords[i]
+                    var long = coords[++i]
+                    if (!lat.isEmpty() && !long.isEmpty()) {
+                        points.push(new google.maps.LatLng(lat, long));
+                    }
+                }
+                return points;
+            }
+
+            String.prototype.isEmpty = function () {
+                return (this.length === 0 || !this.trim());
+            };
+
             // Heatmap data: 500 Points
             function getPoints() {
                 return [
