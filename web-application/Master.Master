@@ -35,7 +35,7 @@
             <!-- start logo -->
             <div id="logo">
                 <%--<a href=""><img src="images/shared/logo.png" width="156" height="40" alt="" /></a>--%>
-                <h1 style="color: white">Greenways Portal </h1>
+                <h1 style="color: white">Greenways Portal</h1>
             </div>
             <!-- end logo -->
 
@@ -74,14 +74,14 @@
 
                     <div class="nav-divider">&nbsp;</div>
 
-<%--                    <ul class="select">
-                        <li><a href="/webapp/HeatMap.aspx"><b>Heat Map</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
-                    </ul>--%>
+                    <ul class="select">
+                        <li class="showhide-account"><a><b>Tickets</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+                    </ul>
 
                     <div class="nav-divider">&nbsp;</div>
 
                     <ul class="select">
-                        <li class="showhide-account"><a><b>Tickets</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+                        <li><a href="/webapp/HeatMap.aspx"><b>Heat Map</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
                     </ul>
 
                     <div class="clear">&nbsp;</div>
