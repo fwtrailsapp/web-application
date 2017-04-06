@@ -27,8 +27,7 @@
                 <canvas id="age"></canvas>
             </div>
         </div>
-<<<<<<< HEAD
-
+    </div>
         <script>
             // This example requires the Visualization library. Include the libraries=visualization
             // parameter when you first load the API. For example:
@@ -197,7 +196,7 @@
                         <td>25</td>
                     </tr>
                 </table>
-=======
+
         <div>
             <h1 style="text-align: center">Ticket Statistics</h1>
             <br />
@@ -215,7 +214,7 @@
             <br />
             <div style="width: 350px; height: 350px; margin: 0px auto">
                 <canvas id="activities"></canvas>
->>>>>>> cb2a5e407d938fdf8b33310fb90ab4eceedf3d59
+
             </div>
         </div>
     </div>

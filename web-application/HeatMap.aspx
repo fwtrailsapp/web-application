@@ -8,7 +8,7 @@
 
     <!--  start page-heading -->
     <div id="page-heading">
-        <h1>HEat Map</h1>
+        <h1>Heat Map</h1>
         <hr style="width: 98%; color: lightgray;" />
     </div>
 
@@ -141,7 +141,7 @@
 
                 heatmap.set('gradient', gradient);
                 heatmap.set('opacity', 1);
-                heatmap.set('radius', 50);
+                heatmap.set('radius', 20);
             }
 
             function parsePath(path)
