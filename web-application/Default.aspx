@@ -127,7 +127,7 @@
 
                 heatmap.set('gradient', gradient);
                 heatmap.set('opacity', 1);
-                heatmap.set('radius', 50);
+                heatmap.set('radius', 20);
             }
 
             function parsePath(path) {
