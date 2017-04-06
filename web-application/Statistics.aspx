@@ -7,10 +7,10 @@
     <script type="text/javascript" src="js/AccountStats.js"></script>
 
 
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
-    <!--  start page-heading -->
-    <div id="page-heading">
+
         <div>
             <h1 style="text-align: center;">Account Statistics</h1>
             <br />
@@ -43,6 +43,5 @@
                 <canvas id="activities"></canvas>
             </div>
         </div>
-    </div>
-    <!-- end page-heading -->
+
 </asp:Content>
