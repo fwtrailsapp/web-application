@@ -1,5 +1,6 @@
 ﻿$(document).ready(function ()
 {
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     var ticketId;
 
     $('#closeDialog').dialog({
@@ -18,8 +19,13 @@
                         complete: function ()
                         {
                             $("#closeDialog").dialog("close");
-                            location.reload();
-                            window.location.href = window.location.href + '?refresh';
+                            if (isChrome)
+                            {
+                                location.reload();
+                            } else
+                            {
+                                window.location.href = window.location.href + '?refresh';
+                            }
                         }
                     });
                     debugger;

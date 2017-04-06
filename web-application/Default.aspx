@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="web_application.Default" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
+    <script type="text/javascript" src="scripts/Chart.min.js"></script>
+    <script type="text/javascript" src="js/TicketStats.js"></script>
+    <script type="text/javascript" src="js/ActivityStats.js"></script>
+    <script type="text/javascript" src="js/AccountStats.js"></script>
+
     <!--  start page-heading -->
     <div id="page-heading">
         <h1>Dashboard</h1>
@@ -8,17 +13,21 @@
     </div>
     <!-- end page-heading -->
 
-    <div style="height: 100%; margin: 0 auto;">
-        <div id="heatmapContents" style="margin-left: 400px;display:inline-block;">
-        <h2 align="center">Heat Map</h2>
-            <div id="contents">
-                <div class="panel map-container" style="background-color: #D3D9DF">
-                    <div class="panel-body panel-body-custom">
-                        <div id="map" style="height: 600px; width: 600px; margin: 0 auto;"></div>
-                    </div>
-                </div>
+    <div id="dashboardContent">
+        <div>
+            <h1 style="text-align: center;">Account Statistics</h1>
+            <br />
+            <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+                <canvas id="accounts"></canvas>
+            </div>
+            <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+                <canvas id="gender"></canvas>
+            </div>
+            <div style="width: 500px; height: 300px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+                <canvas id="age"></canvas>
             </div>
         </div>
+<<<<<<< HEAD
 
         <script>
             // This example requires the Visualization library. Include the libraries=visualization
@@ -188,8 +197,28 @@
                         <td>25</td>
                     </tr>
                 </table>
+=======
+        <div>
+            <h1 style="text-align: center">Ticket Statistics</h1>
+            <br />
+            <div style="width: 400px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 25px;">
+                <canvas id="tickets"></canvas>
+            </div>
+            <div style="width: 500px; height: 300px; display: inline-block; margin-left: 100px; margin-right: 25px;">
+                <canvas id="bar"></canvas>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div>
+            <h1 style="text-align: center">Activity Statistics</h1>
+            <br />
+            <div style="width: 350px; height: 350px; margin: 0px auto">
+                <canvas id="activities"></canvas>
+>>>>>>> cb2a5e407d938fdf8b33310fb90ab4eceedf3d59
             </div>
         </div>
     </div>
+
 
 </asp:Content>

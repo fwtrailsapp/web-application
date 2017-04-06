@@ -1,10 +1,11 @@
-server_url = 'http://68.39.46.187:50000/GreenwayCap/DataRelay.svc/Activity/szook';
+$(document).ready(fuction()
+{
+    var account;
 
-function getActivities() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        console.log(xmlhttp.responseText);
-    }
-    xmlhttp.open("GET", server_url, true);
-    xmlhttp.send();
-}
+    $.ajax({
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        url: "http://23.97.29.252/capstone/datarelay.svc/trails/api/1/statistics/Account",  //method Name 
+        dataType: 'json',
+    })
+})

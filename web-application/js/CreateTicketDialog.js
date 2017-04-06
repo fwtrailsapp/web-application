@@ -2,6 +2,8 @@
 $(document).ready(function ()
 {
 
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
     var date = new Date();
     var month = date.getMonth() + 1;
     var day = date.getDate();
@@ -88,8 +90,13 @@ $(document).ready(function ()
                         complete: function ()
                         {
                             $("#createTicketDialog").dialog("close");
-                            location.reload();
-                            window.location.href = window.location.href + '?refresh';
+                            if (isChrome)
+                            {
+                                location.reload();
+                            } else
+                            {
+                                window.location.href = window.location.href + '?refresh';
+                            }
                         }
                     });
                 }
