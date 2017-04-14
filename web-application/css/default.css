@@ -1,0 +1,30 @@
+﻿.quick_stats_div{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.quick_stats_table{
+    width:65%;
+    height: 75px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+    text-align:center;
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+
+table, td, th {
+        border: 1px solid lightgrey;
+}
+
+.default_div{
+    width: 85%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+}

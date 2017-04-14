@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppPoolInfo.aspx" />
+    <Content Include="css\default.css" />
     <Content Include="css\pro_dropline.css" />
     <Content Include="css\pro_dropline_ie.css" />
     <Content Include="css\screen.css" />
