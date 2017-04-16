@@ -32,7 +32,7 @@
 
             star(ctx, x, y, r, p, m);
             ctx.font = "30px Arial";
-            ctx.fillStyle = "White";
+            ctx.fillStyle = "Black";
             ctx.fillText(accountInfo, 132, 88);
             ctx.fillText("Number of Accounts", 15, 30);
         }
