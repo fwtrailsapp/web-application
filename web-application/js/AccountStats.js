@@ -1,4 +1,22 @@
 ﻿$(document).ready(function () {
+    
+    function star(ctx, x, y, r, p, m)
+    {
+        ctx.save();
+        ctx.beginPath();
+        ctx.translate(x, y);
+        ctx.moveTo(0,0-r);
+        for (var i = 0; i < p; i++)
+        {
+            ctx.rotate(Math.PI / p);
+            ctx.lineTo(0, 0 - (r*m));
+            ctx.rotate(Math.PI / p);
+            ctx.lineTo(0, 0 - r);
+        }
+        ctx.fillStyle = "Gold"
+        ctx.fill();
+        ctx.restore();
+    }
 
     $.ajax({
         type: 'GET',
@@ -8,37 +26,15 @@
         datatype: 'json',
         complete: function (res) {
             accountInfo = res.responseJSON;
+ 
+            ctx = document.getElementById('accounts').getContext('2d');
+            x = 150, y = 82, r = 85, p = 5, m = .4;
 
-            var data = {
-                labels: ["Accounts"],
-                datasets: [
-                    {
-                        data: [accountInfo],
-                        backgroundColor: ["#0000FF"]
-                    }
-                ]
-            }
-
-            var ctx = document.getElementById("accounts").getContext('2d');
-            var accounts = new Chart(ctx, {
-                type: 'pie',
-                data: data,
-                options: {
-                    title: {
-                        display: true,
-                        text: "Number of Accounts"
-                    },
-                    elements: {
-                        arc: {
-                            borderWidth: 0
-                        }
-                    },
-                    legend: {
-                        display: false
-                    }
-                }
-
-            })
+            star(ctx, x, y, r, p, m);
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "White";
+            ctx.fillText(accountInfo, 132, 88);
+            ctx.fillText("Number of Accounts", 15, 30);
         }
     })
 
@@ -115,6 +111,49 @@
                     title: {
                         display: true,
                         text: "Age of Users by Gender"
+                    }
+                }
+            })
+        }
+    })
+
+    $.ajax({
+        type: 'GET',
+        contentType: "application/json' charset=utf-8",
+        url: "http://23.97.29.252/capstone/datarelay.svc/trails/api/1/Statistics/Accounts/Month",
+        data: {},
+        datatype: 'json',
+        complete: function (res) {
+            accountInfo = res.responseJSON;
+
+            december = accountInfo.pop();
+            november = accountInfo.pop();
+            october = accountInfo.pop();
+            september = accountInfo.pop();
+            august = accountInfo.pop();
+            july = accountInfo.pop();
+            june = accountInfo.pop();
+            may = accountInfo.pop();
+            april = accountInfo.pop();
+            march = accountInfo.pop();
+            february = accountInfo.pop();
+            january = accountInfo.pop();
+
+            var ctx = document.getElementById("month").getContext('2d');
+            var age = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets: [{
+                        label: 'Accounts',
+                        data: [january, february, march, april, may, june, july, august, september, october, november, december],
+                        backgroundColor: '#0000FF' 
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Accounts Created by Month"
                     }
                 }
             })

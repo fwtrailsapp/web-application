@@ -18,7 +18,7 @@
             <h1 style="text-align: center;">Account Statistics</h1>
             <br />
             <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
-                <canvas id="accounts"></canvas>
+                <canvas id="accounts" style="width: 350px;height: 350px;"></canvas>
             </div>
             <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
                 <canvas id="gender"></canvas>
@@ -26,28 +26,32 @@
             <div style="width: 400px; height: 300px; display: inline-block; margin-left: 50px; margin-right: 25px;">
                 <canvas id="age"></canvas>
             </div>
+            <div style="width: 400px; height: 300px; display: inline-block; margin-left: 50px; margin-right: 25px; margin-top: 75px;">
+                <canvas id="month"></canvas>
+            </div>
         </div>
-    </div>
-
-    <h1 style="text-align: center">Ticket Statistics</h1>
-    <br />
-    <div style="width: 400px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 25px;">
-        <canvas id="tickets"></canvas>
-    </div>
-    <div style="width: 500px; height: 300px; display: inline-block; margin-left: 100px; margin-right: 25px;">
-        <canvas id="bar"></canvas>
-    </div>
-    </div>
-        <br />
-    <br />
-    <div>
-        <h1 style="text-align: center">Activity Statistics</h1>
-        <br />
-        <div style="width: 350px; height: 350px; margin: 0px auto">
-            <canvas id="activities"></canvas>
-
+        <div>
+            <h1 style="text-align: center">Ticket Statistics</h1>
+            <br />
+            <div style="width: 400px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 25px;">
+                <canvas id="tickets"></canvas>
+             </div>
+            <div style="width: 500px; height: 300px; display: inline-block; margin-left: 100px; margin-right: 25px;">
+                <canvas id="bar"></canvas>
+            </div>
         </div>
-    </div>
+        <br />
+        <br />
+        <div>
+            <h1 style="text-align: center">Activity Statistics</h1>
+            <br />
+            <div style="width: 350px; height: 350px;display: inline-block;margin-left: 200px;margin-right: 50px;">
+                <canvas id="activities"></canvas>
+            </div>
+            <div style="width: 500px; height: 300px;display: inline-block;margin-left: 100px; margin-right: 25px;">
+                <canvas id="time"></canvas>
+            </div>
+        </div>
     </div>
 
 
