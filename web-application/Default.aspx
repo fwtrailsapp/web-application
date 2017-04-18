@@ -39,27 +39,27 @@
     <br />
     <br />
     <div class="default_div">
-        <table>
-            <tr style="background-color:gray;">
-                <h1 style="text-align: center;">Account Statistics</h1>
-            </tr>
-            <tr>
-                <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
-                    <canvas id="accounts"></canvas>
-                </div>
-                <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
-                    <canvas id="gender"></canvas>
-                </div>
-                <div style="width: 400px; height: 300px; display: inline-block; margin-left: 50px; margin-right: 25px;">
-                    <canvas id="age"></canvas>
-                </div>
-            </tr>
-        </table>
+        <div style ="background-color:gray">
+            <h1 style="text-align: center;">Account Statistics</h1>
+        </div>
+
+        <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+            <canvas id="accounts"></canvas>
+        </div>
+        <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+            <canvas id="gender"></canvas>
+        </div>
+        <div style="width: 400px; height: 300px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+            <canvas id="age"></canvas>
+        </div>
     </div>
 
-    <div>
+    <br />
+    <br />
+
+    <div class="default_div">
         <h1 style="text-align: center">Ticket Statistics</h1>
-        <br />
+
         <div style="width: 400px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 25px;">
             <canvas id="tickets"></canvas>
         </div>
@@ -70,6 +70,7 @@
 
     <br />
     <br />
+
     <div>
         <h1 style="text-align: center">Activity Statistics</h1>
         <br />

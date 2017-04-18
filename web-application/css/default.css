@@ -22,6 +22,7 @@ table, td, th {
 
 .default_div{
     width: 85%;
+    height: 500px;
     margin: 0 auto;
     background-color: white;
     border: 1px solid lightgrey;
