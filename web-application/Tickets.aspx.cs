@@ -26,6 +26,7 @@ namespace web_application
         string longitude;
         string gpsId = "";
         string gpsLink = "";
+        string ticketId = "";
         string active = "ACTIVE";
         string title = "No Title";
         string date = "Unknown";
@@ -83,6 +84,7 @@ namespace web_application
                                 gpsId = "GPS" + id;
                                 priorityId = "Priority" + id;
                                 priorityIconId = "PriorityIcon" + id;
+                                ticketId = "Ticket" + id;
                                 gpsLink = "https://www.google.com/maps/place/" + latitude + "," + longitude;
                                 //Response.Write(gpsLink);
                                 ticketList = string.Concat(ticketList,

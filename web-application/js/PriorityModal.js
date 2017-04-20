@@ -18,6 +18,7 @@
                         complete: function ()
                         {
                             debugger;
+                            $('#ticket' + ticketId).css("border")
                             $('#PriorityIcon' + ticketId).css("visibility", "visible");
                             $("#priorityDialog").dialog("close");
 
