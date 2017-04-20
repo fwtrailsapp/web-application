@@ -20,6 +20,8 @@ namespace web_application
         string desc = "No Description.";
         string buttonId = "";
         string imgId = "";
+        string priorityId = "";
+        string priorityIconId = "";
         string latitude;
         string longitude;
         string gpsId = "";
@@ -79,13 +81,24 @@ namespace web_application
                                 commentId = "CommentButton" + id;
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
+                                priorityId = "Priority" + id;
+                                priorityIconId = "PriorityIcon" + id;
                                 gpsLink = "https://www.google.com/maps/place/" + latitude + "," + longitude;
                                 //Response.Write(gpsLink);
                                 ticketList = string.Concat(ticketList,
                                    $"<div id=\"ticketDiv\">"
                                        + "<table style=\"width:100%; height:95%;border-collapse: separate !important;\">"
                                            + "<tr style=\"width:300px\">"
-                                               + $"<td id=\"r1c1\" > #{id} </td>"
+                                               + $"<td id=\"r1c1\" >"
+                                                   + "<div style=\"float:left;overflow:hidden;width:28%;text-align:center;\">"
+                                                       + $"<i id=\"{priorityIconId}\" style=\"visibility:hidden;color:red;\" class=\"fa fa-flag\" aria-hidden=\"true\"></i>"
+                                                   + "</div>"
+                                                   + "<div style=\"float:left;overflow:hidden;width:36%;text-align:center;\">"
+                                                       + $"#{id}"
+                                                   + "</div>" 
+                                                   + "<div style=\"float:left;overflow:hidden;width:36%;text-align:center;\">"
+                                                   + "</div>"
+                                               + "</td>"
                                                + $"<td id=\"r1c2\" colspan=\"2\"><b>{title}</b></td>"
                                                + $"<td id=\"r1c3\" style=\"background-color:{typeColor};\"><b>{type}</b></td>"
                                            + "</tr>"
@@ -99,14 +112,17 @@ namespace web_application
                                            + "</tr>"
                                            + "<tr style=\"width:150px\">"
                                                + $"<td class=\"bottom-left-ticket-border\">" 
-                                                    + "<div style=\"float:left;overflow:hidden;width:28%;border-right:1px solid black;text-align:center;padding-right:10px;\">"
+                                                    + "<div style=\"float:left;overflow:hidden;width:25%;border-right:1px solid black;text-align:center;padding-right:10px;\">"
                                                         + $"<a href=\"\" id=\"{imgId}\"> <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
-                                                    + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
+                                                    + "<div style=\"float:left;overflow:hidden;width:25%;border-right:1px solid black;text-align:center;\">"
                                                         + $"<a href=\"{gpsLink}\" target=\"popup\" onclick=\"window.open('{gpsLink}','popup','width=600,height=600','left=50%'); return false;\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
-                                                    + "<div style=\"float:left;overflow:hidden;width:36%;border-right:1px solid black;text-align:center;\">"
+                                                    + "<div style=\"float:left;overflow:hidden;width:25%;border-right:1px solid black;text-align:center;\">"
                                                         + $"<a href=\"\" id=\"{commentId}\"> <i class=\"fa fa-comment\" aria-hidden=\"true\"></i></a>"
+                                                    + "</div>"
+                                                    + "<div style=\"float:left;overflow:hidden;width:25%;border-right:1px solid black;text-align:center;\">"
+                                                        + $"<a href=\"\" id=\"{priorityId}\"> <i class=\"fa fa-flag\" aria-hidden=\"true\"></i></a>"
                                                     + "</div>"
                                                + "</td>"
                                                + $"<td class=\"bottom-center-ticket-border\" style=\"text-align:center;\">Submitted: {date}</td>"

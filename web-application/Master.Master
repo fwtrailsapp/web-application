@@ -123,6 +123,9 @@
     <div id="closeDialog" title="Warning">
     </div>
 
+    <div id="priorityDialog" title="Confirmation">
+    </div>
+
     <!-- The Image Modal -->
     <div id="myModal" class="modal" style="overflow: hidden; z-index: 1000;">
 

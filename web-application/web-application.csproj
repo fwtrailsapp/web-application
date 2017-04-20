@@ -257,6 +257,7 @@
     <Content Include="js\jquery\ui.checkbox.js" />
     <Content Include="js\jquery\ui.core.js" />
     <Content Include="js\CreateTicketDialog.js" />
+    <Content Include="js\PriorityModal.js" />
     <Content Include="js\TicketStats.js" />
     <Content Include="Login_Old.aspx" />
     <Content Include="Login.aspx" />

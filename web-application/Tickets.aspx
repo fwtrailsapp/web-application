@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/CloseModal.js"></script>
+    <script type="text/javascript" src="js/PriorityModal.js"></script>
     <script type="text/javascript" src="js/CreateTicketDialog.js"></script>
     <script src="https://use.fontawesome.com/4193f3e666.js"></script>
 </asp:Content>

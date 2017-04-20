@@ -23,6 +23,7 @@ namespace web_application
         string typeColor = "blue";
         string dateClosed = "unknown";
         string imgId = "";
+        string priorityId = "";
         string latitude;
         string longitude;
         string gpsId = "";
@@ -76,13 +77,23 @@ namespace web_application
                                 commentId = "CommentButton" + id;
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
+                                priorityId = "Priority" + id;
                                 gpsLink = "https://www.google.com/maps/place/" + latitude + "," + longitude;
 
                                 closedTicketList = string.Concat(closedTicketList,
                                    $"<div id=\"ticketDiv\">"
                                        + "<table style=\"width:100%; height:95%;border-collapse: separate !important;\">"
                                            + "<tr style=\"width:300px\">"
-                                               + $"<td id=\"r1c1\" > #{id} </td>"
+                                               + $"<td id=\"r1c1\" >"
+                                                   + "<div style=\"float:left;overflow:hidden;width:28%;text-align:center;\">"
+                                                       + $"<a href=\"\" id=\"{priorityId}\"> <i class=\"fa fa-flag-o\" aria-hidden=\"true\"></i></a>"
+                                                   + "</div>"
+                                                   + "<div style=\"float:left;overflow:hidden;width:36%;text-align:center;\">"
+                                                       + $"#{id}"
+                                                   + "</div>"
+                                                   + "<div style=\"float:left;overflow:hidden;width:36%;text-align:center;\">"
+                                                   + "</div>"
+                                               + "</td>"
                                                + $"<td id=\"r1c2\" colspan=\"2\"><b>{title}</b></td>"
                                                + $"<td id=\"r1c3\" style=\"background-color:{typeColor};\"><b>{type}</b></td>"
                                            + "</tr>"
