@@ -2,6 +2,20 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+      #grad {
+        font-size: 25px;
+        position: relative;
+        top: 300px;
+        left: 50px;   
+        height: 100px;
+        width: 300px;
+        background: -webkit-linear-gradient(left, rgba(0,255, 255,1), rgba(0,127,255,1), rgba(0,0,255,1), rgba(0,0,191,1), rgba(0,0,127,1), rgba(63, 0, 127,1), rgba(127, 0, 63,1), rgba(255,0, 0,1)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(right, rgba(0,255, 255,1), rgba(0,127,255,1), rgba(0,0,255,1), rgba(0,0,191,1), rgba(0,0,127,1), rgba(63, 0, 127,1), rgba(127, 0, 63,1), rgba(255,0, 0,1)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(right, rgba(0,255, 255,1), rgba(0,127,255,1), rgba(0,0,255,1), rgba(0,0,191,1), rgba(0,0,127,1), rgba(63, 0, 127,1), rgba(127, 0, 63,1), rgba(255,0, 0,1)); /* For Fx 3.6 to 15 */
+        background: linear-gradient(to right, rgba(0,255, 255,1), rgba(0,127,255,1), rgba(0,0,255,1), rgba(0,0,191,1), rgba(0,0,127,1), rgba(63, 0, 127,1), rgba(127, 0, 63,1), rgba(255,0, 0,1)); /* Standard syntax (must be last) */
+}
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
@@ -17,6 +31,12 @@
     <div style="height: 100%; margin: 0 auto;">
         <div id="heatmapContents">
             <div id="contents">
+                <div style="position: relative; top: 280px; left: 125px;">
+                   <h1>Density Range</h1>
+                </div>
+                <div id="grad" style="border: 1px solid black;">
+                    <span style="float: left; color:white">Low</span><span style="float: right; color:white">High</span>
+                </div>
                 <div class="panel map-container" style="background-color: #D3D9DF">
                     <div class="panel-body panel-body-custom">
                         <div id="map" style="height: 600px; width: 600px; margin: 0 auto;"></div>
@@ -44,7 +64,7 @@
                 // heatmap layer
                 heatmap = new google.maps.visualization.HeatmapLayer(
                 {
-                    data: getPoints(),
+                    data: getPaths(),
                     map: map
                 });
                 // overlay of the Fort Wayne Regional Trail Network
@@ -54,7 +74,7 @@
                     map: map
                 });
 
-                getPaths();
+                
             }
             function toggleHeatmap()
             {

@@ -1,23 +1,5 @@
 ﻿$(document).ready(function () {
     
-    function star(ctx, x, y, r, p, m)
-    {
-        ctx.save();
-        ctx.beginPath();
-        ctx.translate(x, y);
-        ctx.moveTo(0,0-r);
-        for (var i = 0; i < p; i++)
-        {
-            ctx.rotate(Math.PI / p);
-            ctx.lineTo(0, 0 - (r*m));
-            ctx.rotate(Math.PI / p);
-            ctx.lineTo(0, 0 - r);
-        }
-        ctx.fillStyle = "Gold"
-        ctx.fill();
-        ctx.restore();
-    }
-
     $.ajax({
         type: 'GET',
         contentType: "application/json' charset=utf-8",
@@ -27,14 +9,7 @@
         complete: function (res) {
             accountInfo = res.responseJSON;
  
-            ctx = document.getElementById('accounts').getContext('2d');
-            x = 150, y = 82, r = 85, p = 5, m = .4;
-
-            star(ctx, x, y, r, p, m);
-            ctx.font = "30px Arial";
-            ctx.fillStyle = "Black";
-            ctx.fillText(accountInfo, 132, 88);
-            ctx.fillText("Number of Accounts", 15, 30);
+            document.getElementById("accounts").innerHTML = accountInfo.toString();
         }
     })
 

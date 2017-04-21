@@ -15,47 +15,45 @@
     <!-- end page-heading -->
 
         <div class="quick_stats_div">
-            <table class="quick_stats_table" align="left">
+            <table class="quick_stats_table" align="center">
                 <tr>
                     <td>
-                        <h1>5</h1>
+                        <h1 id="accounts"></h1>
                         <br />
                         Number of Accounts</td>
                     <td>
-                        <h1>7</h1>
+                        <h1 id="total_tickets"></h1>
                         <br />
                         Ticket Count</td>
                     <td>
-                        <h1>4</h1>
+                        <h1 id="active"></h1>
                         <br />
                         Active Ticket Count</td>
                     <td>
-                        <h1>3</h1>
+                        <h1 id="closed"></h1>
                         <br />
                         Closed Ticket Count</td>
                 </tr>
             </table>
         </div>
 
-    <div align="left">
-        <div style="width: 500px; height: 300px;" >
-            <canvas id="bar"></canvas>
-        </div></div>
+    
+        
+        <br />
+        <br />
+        <br />
 
-        <br />
-        <br />
         <div class="default_div">
 
             <h1 style="text-align: center;">Account Statistics</h1>
-
-            <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
-                <canvas id="accounts"></canvas>
-            </div>
-            <div style="width: 350px; height: 350px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+            <div style="width: 350px; height: 350px; display: inline-block; margin-left: 25px; margin-right: 25px;">
                 <canvas id="gender"></canvas>
             </div>
-            <div style="width: 400px; height: 300px; display: inline-block; margin-left: 50px; margin-right: 25px;">
+            <div style="width: 350px; height: 300px; display: inline-block; margin-left: 25px; margin-right: 25px;">
                 <canvas id="age"></canvas>
+            </div>
+            <div style="width: 350px; height: 300px; display: inline-block; margin-left: 25px; margin-right: 25px;">
+                <canvas id="month"></canvas>
             </div>
         </div>
 
@@ -65,12 +63,12 @@
         <div class="default_div">
             <h1 style="text-align: center">Ticket Statistics</h1>
 
-            <div style="width: 400px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 25px;">
+            <div style="width: 400px; height: 350px; display: inline-block; margin-left: 150px; margin-right: 25px;">
                 <canvas id="tickets"></canvas>
             </div>
-<%--            <div style="width: 500px; height: 300px; display: inline-block; margin-left: 100px; margin-right: 25px;">
+            <div style="width: 500px; height: 300px; display: inline-block; margin-left: 100px; margin-right: 25px;">
                 <canvas id="bar"></canvas>
-            </div>--%>
+            </div>
         </div>
 
         <br />
@@ -79,10 +77,10 @@
         <div>
 
             <br />
-            <div>
+            <div class="default_div">
                 <h1 style="text-align: center">Activity Statistics</h1>
                 <br />
-                <div style="width: 350px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 50px;">
+                <div style="width: 350px; height: 350px; display: inline-block; margin-left: 200px; margin-right: 25px;">
                     <canvas id="activities"></canvas>
                 </div>
                 <div style="width: 500px; height: 300px; display: inline-block; margin-left: 100px; margin-right: 25px;">
