@@ -24,11 +24,15 @@ namespace web_application
         string dateClosed = "unknown";
         string imgId = "";
         string priorityId = "";
+        string priorityIconId = "";
         string latitude;
         string longitude;
         string gpsId = "";
         string gpsLink = "";
         string commentId = "";
+
+        string priority = "0";
+        string visibilityText = "hidden";
 
         int rowNumber = 0;
 
@@ -70,6 +74,12 @@ namespace web_application
                                 notes = reader.GetValue(i + 10).ToString();
                                 typeColor = reader.GetValue(i + 11).ToString();
                                 dateClosed = reader.GetValue(i + 12).ToString();
+                                priority = reader.GetValue(i + 13).ToString();
+
+                                if (priority.Equals("1"))
+                                {
+                                    visibilityText = "visible";
+                                }
 
                                 //Remove spaces for the color
                                 typeColor = typeColor.Replace(" ", "");
@@ -78,6 +88,7 @@ namespace web_application
                                 imgId = "Image" + id;
                                 gpsId = "GPS" + id;
                                 priorityId = "Priority" + id;
+                                priorityIconId = "PriorityIcon" + id;
                                 gpsLink = "https://www.google.com/maps/place/" + latitude + "," + longitude;
 
                                 closedTicketList = string.Concat(closedTicketList,
@@ -86,7 +97,7 @@ namespace web_application
                                            + "<tr style=\"width:300px\">"
                                                + $"<td id=\"r1c1\" >"
                                                    + "<div style=\"float:left;overflow:hidden;width:28%;text-align:center;\">"
-                                                       + $"<a href=\"\" id=\"{priorityId}\"> <i class=\"fa fa-flag-o\" aria-hidden=\"true\"></i></a>"
+                                                       + $"<i id=\"{priorityIconId}\" style=\"visibility:{visibilityText};color:red;\" class=\"fa fa-flag\" aria-hidden=\"true\"></i>"
                                                    + "</div>"
                                                    + "<div style=\"float:left;overflow:hidden;width:36%;text-align:center;\">"
                                                        + $"#{id}"

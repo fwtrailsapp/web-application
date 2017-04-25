@@ -34,6 +34,9 @@ namespace web_application
         string typeColor = "blue";
         string commentId = "";
 
+        string priority = "0";
+        string visibilityText = "hidden";
+
         int rowNumber = 0;
 
         public string sqlData;
@@ -74,6 +77,12 @@ namespace web_application
                                 username = reader.GetValue(i + 9).ToString();
                                 notes = reader.GetValue(i + 10).ToString();
                                 typeColor = reader.GetValue(i + 11).ToString();
+                                priority = reader.GetValue(i + 13).ToString();
+
+                                if(priority.Equals("1"))
+                                {
+                                    visibilityText = "visible";
+                                }
 
                                 //Remove spaces
                                 typeColor = typeColor.Replace(" ", "");
@@ -93,7 +102,7 @@ namespace web_application
                                            + "<tr style=\"width:300px\">"
                                                + $"<td id=\"r1c1\" >"
                                                    + "<div style=\"float:left;overflow:hidden;width:28%;text-align:center;\">"
-                                                       + $"<i id=\"{priorityIconId}\" style=\"visibility:hidden;color:red;\" class=\"fa fa-flag\" aria-hidden=\"true\"></i>"
+                                                       + $"<i id=\"{priorityIconId}\" style=\"visibility:{visibilityText};color:red;\" class=\"fa fa-flag\" aria-hidden=\"true\"></i>"
                                                    + "</div>"
                                                    + "<div style=\"float:left;overflow:hidden;width:36%;text-align:center;\">"
                                                        + $"#{id}"
