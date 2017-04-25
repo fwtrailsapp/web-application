@@ -35,7 +35,7 @@ namespace web_application
         string commentId = "";
 
         string priority = "0";
-        string visibilityText = "hidden";
+        string visibilityText;
 
         int rowNumber = 0;
 
@@ -62,6 +62,7 @@ namespace web_application
                 {
                     while (reader.Read())
                     {
+                        visibilityText = "hidden";
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
 

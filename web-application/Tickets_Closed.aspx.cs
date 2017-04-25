@@ -58,6 +58,7 @@ namespace web_application
                 {
                     while (reader.Read())
                     {
+                        visibilityText = "hidden";
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
 
